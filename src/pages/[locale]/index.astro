@@ -10,6 +10,9 @@ import PlatformBlockDiagram from '../../components/visuals/PlatformBlockDiagram.
 import ProcessFlow from '../../components/visuals/ProcessFlow.astro';
 import TrustBadges from '../../components/sections/TrustBadges.astro';
 import CTASection from '../../components/sections/CTASection.astro';
+import LogoWall from '../../components/sections/LogoWall.astro';
+import MetricsWall from '../../components/sections/MetricsWall.astro';
+import MultiPathCTA from '../../components/sections/MultiPathCTA.astro';
 import Accordion from '../../components/ui/Accordion.tsx';
 import { locales, getTranslation, getLocalePath } from '../../i18n/utils';
 import type { Locale } from '../../i18n/utils';
@@ -70,6 +73,11 @@ const t = getTranslation(locale);
       </div>
     </section>
 
+    <!-- Logo Wall -->
+    {t.homeAdditions?.logoWall && (
+      <LogoWall title={t.homeAdditions.logoWall.title} logos={t.homeAdditions.logoWall.logos ?? []} />
+    )}
+
     <!-- Core Value -->
     <section class="py-24 bg-surface-panel section-gradient-top">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,18 +117,36 @@ const t = getTranslation(locale);
       </div>
     </section>
 
-    <!-- Platform Overview -->
+    <!-- Nexus Intelligence Overview -->
     <section class="py-28 bg-gradient-to-b from-surface-dark to-background relative overflow-hidden section-gradient-top">
       <div class="orb orb-cyan w-[500px] h-[500px] -bottom-40 right-0 opacity-30" />
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div class="reveal">
-            <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-5 tracking-tight">{t.home.platformOverview.title}</h2>
-            <p class="text-lg text-muted-foreground mb-8 leading-relaxed">{t.home.platformOverview.subtitle}</p>
-            <a href={getLocalePath(locale, '/platform')} class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium group">
-              {t.home.platformOverview.exploreLink}
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+            {t.homeAdditions?.nexusOverview ? (
+              <Fragment>
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-5 tracking-tight">{t.homeAdditions.nexusOverview.title}</h2>
+                <p class="text-lg text-muted-foreground mb-6 leading-relaxed">{t.homeAdditions.nexusOverview.subtitle}</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                  {(t.homeAdditions.nexusOverview.steps ?? t.homeAdditions.nexusOverview.highlights?.map((h: any) => h.title) ?? []).map((step: string) => (
+                    <span class="px-3 py-1.5 text-sm rounded-lg bg-primary/10 text-primary border border-primary/20">{step}</span>
+                  ))}
+                </div>
+                <a href={getLocalePath(locale, '/platform/nexus-intelligence')} class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium group">
+                  {t.homeAdditions.nexusOverview.learnMore ?? t.homeAdditions.nexusOverview.link?.label ?? 'Learn more'}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-5 tracking-tight">{t.home.platformOverview.title}</h2>
+                <p class="text-lg text-muted-foreground mb-8 leading-relaxed">{t.home.platformOverview.subtitle}</p>
+                <a href={getLocalePath(locale, '/platform')} class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium group">
+                  {t.home.platformOverview.exploreLink}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </Fragment>
+            )}
           </div>
           <div>
             <PlatformBlockDiagram client:visible layers={t.platform.architecture.layers} />
@@ -154,6 +180,11 @@ const t = getTranslation(locale);
       </div>
     </section>
 
+    <!-- Metrics Wall -->
+    {t.homeAdditions?.metricsWall && (
+      <MetricsWall title={t.homeAdditions.metricsWall.title} items={t.homeAdditions.metricsWall.items ?? t.homeAdditions.metricsWall.metrics ?? []} />
+    )}
+
     <!-- Trust -->
     <TrustBadges title={t.home.trust.title} items={t.home.trust.items} />
 
@@ -166,12 +197,20 @@ const t = getTranslation(locale);
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <CTASection
-      headline={t.home.cta.headline}
-      primaryLabel={t.home.cta.button}
-      primaryHref={getLocalePath(locale, '/contact')}
-    />
+    <!-- Multi-Path CTA -->
+    {t.homeAdditions?.multiPathCta ? (
+      <MultiPathCTA
+        headline={t.homeAdditions.multiPathCta.headline ?? t.homeAdditions.multiPathCta.title}
+        options={t.homeAdditions.multiPathCta.options ?? t.homeAdditions.multiPathCta.paths}
+        locale={locale}
+      />
+    ) : (
+      <CTASection
+        headline={t.home.cta.headline}
+        primaryLabel={t.home.cta.button}
+        primaryHref={getLocalePath(locale, '/contact')}
+      />
+    )}
 
   </PageLayout>
 </BaseLayout>

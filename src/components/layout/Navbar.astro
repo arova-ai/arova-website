@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../../i18n/utils';
 import { getTranslation, getAlternateLocale, getLocalePath } from '../../i18n/utils';
+import MegaMenu from './MegaMenu.astro';
 import MobileMenu from './MobileMenu.tsx';
 
 interface Props {
@@ -30,14 +31,8 @@ const navLinks = [
       <img src={`${base}/logo-light.svg`} alt="Arova" class="h-10" />
     </a>
 
-    <!-- Desktop Nav -->
-    <div class="hidden lg:flex items-center gap-1">
-      {navLinks.map((link) => (
-        <a href={link.href} class="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5">
-          {link.label}
-        </a>
-      ))}
-    </div>
+    <!-- Desktop Nav (Mega Menu) -->
+    <MegaMenu locale={locale} />
 
     <!-- Right section -->
     <div class="flex items-center gap-3">

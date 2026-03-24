@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageLayout from '../../../components/layout/PageLayout.astro';
+import HeroSection from '../../../components/sections/HeroSection.astro';
+import CTASection from '../../../components/sections/CTASection.astro';
+import SectionTitle from '../../../components/ui/SectionTitle.astro';
+import Card from '../../../components/ui/Card.astro';
+import { locales, getTranslation, getLocalePath } from '../../../i18n/utils';
+import type { Locale } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getTranslation(locale);
+const ind = t.industries.financialServices;
+---
+
+<BaseLayout title={t.meta.industryFinancial.title} description={t.meta.industryFinancial.description} locale={locale} currentPath="/industries/financial-services">
+  <PageLayout locale={locale} currentPath="/industries/financial-services">
+
+    <HeroSection headline={ind.hero.headline} subtitle={ind.hero.subtitle} />
+
+    <!-- Challenges & Solutions -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        {ind.challenges.map((c, i) => (
+          <div class="glass-card p-6 grid md:grid-cols-2 gap-6">
+            <div>
+              <div class="text-xs font-semibold text-destructive uppercase tracking-wider mb-2">{locale === 'zh-TW' ? '挑戰' : 'Challenge'}</div>
+              <h3 class="text-lg font-semibold text-foreground mb-2">{c.title}</h3>
+              <p class="text-sm text-muted-foreground">{c.description}</p>
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Arova Nexus</div>
+              <p class="text-sm text-foreground">{ind.solutions[i].solution}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Compliance Badges -->
+    <section class="py-20 bg-surface-panel border-y border-white/5">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={locale === "zh-TW" ? "合規認證" : "Compliance"} />
+        <div class="flex flex-wrap justify-center gap-4 stagger-children">
+          {ind.compliance.map((badge) => (
+            <span class="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-foreground font-medium">{badge}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <CTASection
+      headline={ind.cta.headline}
+      primaryLabel={ind.cta.ctaPrimary}
+      primaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Card from '../../components/ui/Card.astro';
+import { locales, getTranslation, getLocalePath } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getTranslation(locale);
+const docs = t.docsPage;
+---
+
+<BaseLayout title={t.meta.docs.title} description={t.meta.docs.description} locale={locale} currentPath="/docs">
+  <PageLayout locale={locale} currentPath="/docs">
+
+    <HeroSection headline={docs.hero.headline} subtitle={docs.hero.subtitle} />
+
+    <!-- Resource Cards -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 gap-6 stagger-children">
+          {docs.resources.map((resource) => (
+            <Card>
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="text-lg font-semibold text-foreground">{resource.title}</h3>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent/10 text-accent shrink-0 ml-3">{docs.comingSoonBadge}</span>
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed">{resource.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <CTASection
+      headline={docs.cta.headline}
+      primaryLabel={docs.cta.button}
+      primaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

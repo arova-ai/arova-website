@@ -1,0 +1,40 @@
+---
+import type { Locale } from '../../i18n/utils';
+import { getLocalePath } from '../../i18n/utils';
+import Button from '../ui/Button.astro';
+
+interface Option {
+  title: string;
+  description: string;
+  button?: string;
+  href?: string;
+  link?: string;
+}
+
+interface Props {
+  headline: string;
+  options: Option[];
+  locale: Locale;
+}
+
+const { headline, options, locale } = Astro.props;
+---
+
+<section class="py-28 relative overflow-hidden">
+  <div class="orb orb-cyan orb-float w-[400px] h-[400px] -top-40 left-1/4 opacity-20" />
+  <div class="orb orb-purple w-[300px] h-[300px] -bottom-20 right-1/4 opacity-15" />
+  <div class="section-gradient-top absolute inset-0" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-foreground text-center mb-12 tracking-tight text-glow-cyan">{headline}</h2>
+    <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto stagger-children">
+      {options.map((opt) => (
+        <div class="glass-card p-6 text-center flex flex-col">
+          <h3 class="text-lg font-semibold text-foreground mb-2">{opt.title}</h3>
+          <p class="text-sm text-muted-foreground mb-6 flex-1">{opt.description}</p>
+          <Button href={getLocalePath(locale, opt.href ?? opt.link ?? '/contact')} variant="primary" size="md">{opt.button ?? opt.title}</Button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

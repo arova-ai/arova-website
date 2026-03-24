@@ -14,7 +14,24 @@
     "integrations": { "title": "整合生態系 — Arova Nexus", "description": "探索 Arova Nexus 50+ 企業級連接器與整合能力。" },
     "forItLeaders": { "title": "IT 決策者方案 — Arova Nexus", "description": "為 CIO/CTO 設計：治理、ROI 與風險控管。" },
     "forSreDevops": { "title": "SRE & DevOps 方案 — Arova Nexus", "description": "為 SRE/DevOps 設計：自動化、整合與 MTTR 縮減。" },
-    "forItOperations": { "title": "IT 營運方案 — Arova Nexus", "description": "為 IT 營運主管設計：效率提升、工具整合與團隊生產力。" }
+    "forItOperations": { "title": "IT 營運方案 — Arova Nexus", "description": "為 IT 營運主管設計：效率提升、工具整合與團隊生產力。" },
+    "nexusIntelligence": { "title": "Nexus Intelligence — Arova Nexus AI 引擎", "description": "深入了解 Nexus Intelligence 的 5 步驟 AI 推理引擎、技術元件與治理優先的 AI 架構。" },
+    "solutionAiOps": { "title": "AI 驅動的 IT 維運 — Arova Nexus", "description": "讓 Nexus Intelligence 自動處理 L1 工單，你的團隊專注於真正重要的事。" },
+    "solutionDeployment": { "title": "智慧部署與變更治理 — Arova Nexus", "description": "自動化部署工作流，內建預檢查、多層審批和回滾機制。" },
+    "solutionIncident": { "title": "事件調查與根因分析 — Arova Nexus", "description": "AI 自動聚合跨系統日誌，秒級關聯分析，快速鎖定根因。" },
+    "solutionCompliance": { "title": "合規與存取權限控管 — Arova Nexus", "description": "JIT 存取控制與自動化合規報表，確保每個操作可追溯、可審計。" },
+    "solutionWorkflow": { "title": "企業工作流整合 — Arova Nexus", "description": "50+ 連接器打破系統孤島，實現跨工具端到端自動化。" },
+    "platformAutomation": { "title": "自動化引擎 — Arova Nexus", "description": "視覺化低代碼工作流編輯器，狀態機引擎與並行任務執行。" },
+    "platformIntegrationHub": { "title": "整合中樞 — Arova Nexus", "description": "50+ 企業級連接器，自訂 Webhook/API，雙向資料同步。" },
+    "platformGovernance": { "title": "治理與護欄 — Arova Nexus", "description": "細緻 RBAC、多層審批、預執行安全檢查，治理優先的維運設計。" },
+    "platformObservability": { "title": "可觀測性 — Arova Nexus", "description": "即時日誌監控、資源拓撲視覺化、瓶頸智慧分析。" },
+    "industryFinancial": { "title": "金融業 IT 維運方案 — Arova Nexus", "description": "滿足金融監管合規、加速部署安全性、降低維運風險。" },
+    "industryManufacturing": { "title": "製造業 IT 維運方案 — Arova Nexus", "description": "跨國 IT 基礎設施管理、工具整合、新人入職自動化。" },
+    "industryTechnology": { "title": "科技業 IT 維運方案 — Arova Nexus", "description": "高速迭代環境下的部署治理、可觀測性與自動化。" },
+    "blog": { "title": "Blog — Arova", "description": "AI 驅動 IT 維運的最新觀點、技術深度與產業趨勢。" },
+    "glossary": { "title": "AI 維運術語表 — Arova", "description": "AIOps、MTTR、SRE、Runbook 等 IT 維運專業術語完整定義。" },
+    "assessment": { "title": "免費 IT 維運評估 — Arova Nexus", "description": "5 分鐘評估你的 IT 維運自動化潛力，取得個人化建議。" },
+    "docs": { "title": "文件中心 — Arova Nexus", "description": "API 文件、整合指南、快速入門與 SDK 文件。" }
   },
   "nav": {
     "home": "首頁",
@@ -29,7 +46,35 @@
     "langSwitch": "EN",
     "trust": "信任與合規",
     "whyArova": "為什麼選擇我們",
-    "integrations": "整合生態系"
+    "integrations": "整合生態系",
+    "platformOverview": "平台總覽",
+    "nexusIntelligence": "Nexus Intelligence",
+    "automationEngine": "自動化引擎",
+    "integrationHubNav": "整合中樞",
+    "governanceNav": "治理與護欄",
+    "observabilityNav": "可觀測性",
+    "solutionsOverview": "解決方案總覽",
+    "aiDrivenOps": "AI 驅動 IT 維運",
+    "deploymentGovernance": "智慧部署與變更治理",
+    "incidentInvestigation": "事件調查與根因分析",
+    "complianceAccess": "合規與存取控管",
+    "workflowIntegrationNav": "企業工作流整合",
+    "byRole": "依角色",
+    "byIndustry": "依產業",
+    "financialServices": "金融業",
+    "manufacturing": "製造業",
+    "technology": "科技業",
+    "customerStories": "客戶案例",
+    "whyArovaNav": "為什麼選擇 Arova",
+    "resourceCenter": "資源中心",
+    "blogNav": "Blog",
+    "glossaryNav": "術語表",
+    "docsNav": "文件中心",
+    "assessmentNav": "免費評估",
+    "aboutNav": "關於 Arova",
+    "trustNav": "信任與合規",
+    "expertHubNav": "ASUS ExpertHub",
+    "contactNav": "聯絡我們"
   },
   "home": {
     "hero": {
@@ -671,7 +716,9 @@
         { "label": "平台能力", "href": "/capabilities" },
         { "label": "解決方案", "href": "/solutions" },
         { "label": "整合生態系", "href": "/integrations" },
-        { "label": "信任與合規", "href": "/trust" }
+        { "label": "信任與合規", "href": "/trust" },
+        { "label": "Nexus Intelligence", "href": "/platform/nexus-intelligence" },
+        { "label": "自動化引擎", "href": "/platform/automation" }
       ]
     },
     "company": {
@@ -680,12 +727,354 @@
         { "label": "關於我們", "href": "/about" },
         { "label": "成功案例", "href": "/case-studies" },
         { "label": "預約 Demo", "href": "/contact" },
-        { "label": "為什麼選擇我們", "href": "/why-arova" }
+        { "label": "為什麼選擇我們", "href": "/why-arova" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "文件中心", "href": "/docs" }
       ]
     },
     "contactTitle": "聯絡方式",
     "copyright": "© 2026 Arova. All rights reserved.",
     "privacy": "隱私政策",
     "terms": "服務條款"
+  },
+  "nexusIntelligencePage": {
+    "hero": {
+      "headline": "Nexus Intelligence",
+      "subtitle": "為企業 IT 維運設計的 AI 引擎。不是通用 AI，不是腳本自動化，而是理解企業場景、在治理護欄內自主行動的專業 AI。"
+    },
+    "reasoningFlow": {
+      "title": "5 步驟 AI 推理引擎",
+      "subtitle": "Nexus Intelligence 不只是回應指令。它感知環境、理解意圖、規劃行動、安全執行、持續學習。",
+      "steps": [
+        { "name": "感知", "label": "Perceive", "description": "介接監控系統、工單平台與基礎設施，即時感知 IT 環境變化與事件。" },
+        { "name": "理解", "label": "Understand", "description": "解析使用者意圖與系統狀態，結合上下文記憶建立完整的情境理解。" },
+        { "name": "規劃", "label": "Plan", "description": "根據理解生成最佳執行計畫，評估風險並選擇適當的自動化工作流。" },
+        { "name": "執行", "label": "Execute", "description": "在治理護欄內安全執行。需要審批的操作自動送審，可自動化的操作立即完成。" },
+        { "name": "學習", "label": "Learn", "description": "每次執行的結果回饋到知識庫，持續優化推理模型與自動化策略。" }
+      ]
+    },
+    "techComponents": {
+      "title": "6 大核心技術元件",
+      "items": [
+        { "name": "意圖解析引擎", "label": "Intent Parser", "description": "透過 NLP 理解自然語言請求的真實意圖，支援中英文混合輸入。" },
+        { "name": "上下文記憶體", "label": "Context Memory", "description": "維護跨對話、跨系統的情境記憶，讓 AI 理解前因後果。" },
+        { "name": "任務規劃器", "label": "Task Planner", "description": "將複雜需求拆解為可執行的步驟序列，自動處理依賴關係。" },
+        { "name": "治理驗證器", "label": "Governance Validator", "description": "每個操作在執行前都經過治理規則驗證，確保合規與安全。" },
+        { "name": "執行協調器", "label": "Action Orchestrator", "description": "跨系統協調執行任務，處理重試、回滾與異常狀況。" },
+        { "name": "知識累積器", "label": "Knowledge Accumulator", "description": "自動記錄每次處理過程，建立可搜尋的組織知識庫。" }
+      ]
+    },
+    "governanceFirst": {
+      "title": "治理優先的 AI",
+      "subtitle": "Nexus Intelligence 不是黑箱。每個 AI 決策都在可配置的治理護欄內執行，人類始終保有最終決策權。",
+      "items": [
+        "AI 決策透明度與可解釋性",
+        "可配置的自動化邊界",
+        "人工覆核與多層審批機制",
+        "完整的 AI 行為稽核軌跡",
+        "分級授權：哪些可自動、哪些需審批"
+      ]
+    },
+    "comparison": {
+      "title": "Nexus Intelligence vs 其他方法",
+      "headers": ["能力", "Nexus Intelligence", "規則引擎", "通用 LLM", "自建腳本"],
+      "rows": [
+        ["理解自然語言意圖", "✓", "✗", "✓", "✗"],
+        ["企業治理護欄", "✓", "部分", "✗", "✗"],
+        ["跨系統自動執行", "✓", "✓", "✗", "部分"],
+        ["持續學習優化", "✓", "✗", "✗", "✗"],
+        ["完整稽核軌跡", "✓", "部分", "✗", "部分"],
+        ["無需專業 AI 知識", "✓", "✗", "✗", "✗"]
+      ]
+    },
+    "cta": {
+      "headline": "看看 Nexus Intelligence 如何處理你的場景",
+      "ctaPrimary": "預約技術 Demo",
+      "ctaSecondary": "下載技術白皮書"
+    }
+  },
+  "solutionPages": {
+    "aiDrivenOps": {
+      "hero": { "headline": "AI 驅動的日常 IT 維運", "subtitle": "讓 Nexus Intelligence 自動處理 L1 工單，你的團隊專注於真正重要的事。", "metric": "40% L1 工單自動處理" },
+      "scenarios": [
+        { "title": "週一早上的 50 封密碼重設請求", "description": "IT 服務台在週一早上收到大量密碼重設請求。每個需要 15 分鐘手動處理，佔據團隊整個上午。" },
+        { "title": "權限申請需要 3 天、跨 4 個系統", "description": "一個簡單的權限申請需要在 AD、ServiceNow、審批系統和目標系統之間手動操作。" },
+        { "title": "新人入職 IT 環境準備需要一週", "description": "帳號開通、郵件設定、權限配置、設備準備——每個新人都需要 IT 團隊投入大量時間。" }
+      ],
+      "workflow": { "title": "Nexus Intelligence 如何自動處理", "steps": ["使用者提交請求", "AI 解析意圖", "驗證權限", "自動執行", "記錄稽核", "通知完成"] },
+      "capabilities": ["自然語言工單處理", "跨系統自動化執行", "治理護欄內的自主操作", "知識累積與持續優化"],
+      "metrics": [
+        { "value": "40%", "label": "L1 工單自動處理" },
+        { "value": "3 分鐘", "label": "平均處理時間" },
+        { "value": "85%", "label": "使用者滿意度" },
+        { "value": "100%", "label": "操作可稽核" }
+      ],
+      "cta": { "headline": "預約一場針對 L1 工單的專屬 Demo", "ctaPrimary": "預約 Demo", "ctaSecondary": "計算你的 ROI" }
+    },
+    "deploymentGovernance": {
+      "hero": { "headline": "智慧部署與變更治理", "subtitle": "自動化部署工作流，每次變更都經過標準化流程。", "metric": "變更前置時間 -60%" },
+      "scenarios": [
+        { "title": "每週數十次部署，每次都在冒險", "description": "手動部署沒有標準化流程，設定錯誤率高達 15%，一次失誤就可能導致服務中斷。" },
+        { "title": "變更審批流程分散在 email 和 chat 中", "description": "審批紀錄散落各處，無法滿足合規審計的追溯要求。" },
+        { "title": "回滾需要手動操作，耗時 2 小時以上", "description": "當部署出問題時，沒有自動化的回滾機制，需要資深工程師手動處理。" }
+      ],
+      "workflow": { "title": "標準化的部署治理流程", "steps": ["變更請求", "自動預檢查", "多層審批", "自動部署", "健康檢查", "自動回滾（如需）"] },
+      "capabilities": ["自動化預檢查與驗證", "多層審批工作流", "Canary 部署與藍綠部署", "自動回滾機制"],
+      "metrics": [
+        { "value": "60%", "label": "變更前置時間縮短" },
+        { "value": "0%", "label": "設定錯誤率" },
+        { "value": "2 小時", "label": "原需 3 天的部署時間" },
+        { "value": "100%", "label": "變更可追溯" }
+      ],
+      "cta": { "headline": "看看標準化部署如何降低你的變更風險", "ctaPrimary": "預約 Demo", "ctaSecondary": "下載部署治理白皮書" }
+    },
+    "incidentInvestigation": {
+      "hero": { "headline": "事件調查與根因分析", "subtitle": "AI 自動聚合跨系統日誌，秒級關聯分析，快速鎖定根因。", "metric": "MTTR 縮短 50%" },
+      "scenarios": [
+        { "title": "凌晨 3 點的告警風暴", "description": "監控系統同時發出 200+ 告警，on-call 工程師需要在多個工具間手動追查，壓力極大。" },
+        { "title": "跨系統追查耗時 4 小時", "description": "一個簡單的服務中斷，需要查看 Datadog、Prometheus、應用日誌、Kubernetes 事件才能找到根因。" },
+        { "title": "排障經驗只存在資深工程師的腦中", "description": "每次類似事件都要從頭排查，因為之前的排障知識沒有被系統化記錄。" }
+      ],
+      "workflow": { "title": "AI 驅動的事件回應流程", "steps": ["告警觸發", "AI 聚合日誌", "關聯分析", "根因定位", "建議處置", "知識累積"] },
+      "capabilities": ["跨系統日誌自動聚合", "AI 關聯分析與根因定位", "自動化 Runbook 執行", "排障知識庫自動累積"],
+      "metrics": [
+        { "value": "50%", "label": "MTTR 縮短" },
+        { "value": "秒級", "label": "關聯分析速度" },
+        { "value": "70%", "label": "新人上手時間縮短" },
+        { "value": "200+", "label": "告警自動降噪處理" }
+      ],
+      "cta": { "headline": "看看 AI 如何加速你的事件回應", "ctaPrimary": "預約 Demo", "ctaSecondary": "下載 MTTR 優化指南" }
+    },
+    "compliance": {
+      "hero": { "headline": "合規與存取權限控管", "subtitle": "JIT 存取控制與自動化合規報表，確保每個操作可追溯、可審計。", "metric": "100% 操作合規" },
+      "scenarios": [
+        { "title": "閒置特權帳號成為安全風險", "description": "過多的永久性高權限帳號增加攻擊面，但手動回收權限耗時且容易遺漏。" },
+        { "title": "合規報表需要手動彙整 3 天", "description": "每季度的合規審計報表需要從多個系統手動收集數據，耗時且容易出錯。" },
+        { "title": "無法追溯誰在何時做了什麼操作", "description": "手動操作缺乏完整的稽核軌跡，無法滿足金融監管機構的要求。" }
+      ],
+      "workflow": { "title": "自動化的合規控管流程", "steps": ["存取請求", "JIT 權限授予", "限時自動回收", "操作記錄", "合規報表", "審計追溯"] },
+      "capabilities": ["Just-in-Time 存取控制", "自動化權限生命週期管理", "不可篡改的操作稽核日誌", "一鍵合規報表產出"],
+      "metrics": [
+        { "value": "100%", "label": "操作可稽核" },
+        { "value": "0", "label": "閒置特權帳號" },
+        { "value": "90%", "label": "報表時間縮短" },
+        { "value": "通過", "label": "金融業年度審計" }
+      ],
+      "cta": { "headline": "了解如何自動化你的合規流程", "ctaPrimary": "預約 Demo", "ctaSecondary": "下載合規白皮書" }
+    },
+    "workflowIntegration": {
+      "hero": { "headline": "企業工作流無縫整合", "subtitle": "50+ 連接器打破系統孤島，實現跨工具的端到端自動化流程。", "metric": "50+ 企業連接器" },
+      "scenarios": [
+        { "title": "20+ 種 IT 工具之間沒有自動化", "description": "IT 團隊每天在 ServiceNow、Jira、AD、監控系統之間手動切換，資訊斷裂。" },
+        { "title": "新系統上線整合需要數月", "description": "每次引入新工具，都需要大量客製開發才能與現有系統串接。" },
+        { "title": "自動化腳本散落各處，無人維護", "description": "歷年累積的自動化腳本缺乏統一管理，成為技術債。" }
+      ],
+      "workflow": { "title": "統一的整合自動化架構", "steps": ["連接器介接", "事件觸發", "工作流編排", "跨系統執行", "狀態同步", "結果回報"] },
+      "capabilities": ["50+ 預建企業連接器", "自訂 Webhook / API 整合", "視覺化工作流編排", "雙向資料同步"],
+      "metrics": [
+        { "value": "50+", "label": "企業連接器" },
+        { "value": "80%", "label": "L1 工單消除" },
+        { "value": "首日", "label": "新人 IT 環境就緒" },
+        { "value": "數天", "label": "新系統整合時間" }
+      ],
+      "cta": { "headline": "看看如何打破你的工具孤島", "ctaPrimary": "預約 Demo", "ctaSecondary": "查看整合清單" }
+    }
+  },
+  "platformModules": {
+    "automation": {
+      "hero": { "headline": "自動化引擎", "subtitle": "視覺化的低代碼工作流編輯器，讓複雜的 IT 流程自動化變得簡單。" },
+      "features": [
+        { "title": "低代碼拖拽設計", "description": "視覺化工作流編輯器，無需寫程式即可建立複雜的自動化流程。" },
+        { "title": "狀態機引擎", "description": "完整的狀態管理，支援條件分支、循環、等待和並行執行。" },
+        { "title": "並行任務執行", "description": "同時執行多個獨立任務，大幅提升自動化效率。" },
+        { "title": "錯誤處理與重試", "description": "內建自動重試、超時處理和異常回滾機制。" },
+        { "title": "排程與觸發器", "description": "支援定時排程、事件觸發和 API 觸發的多種啟動方式。" },
+        { "title": "版本控管", "description": "工作流版本管理，支援 A/B 測試和安全回滾。" }
+      ],
+      "cta": { "headline": "探索自動化引擎的完整能力", "button": "預約 Demo" }
+    },
+    "integrationHub": {
+      "hero": { "headline": "整合中樞", "subtitle": "50+ 企業級連接器，自訂 Webhook/API，讓你不需要替換任何現有系統。" },
+      "features": [
+        { "title": "50+ 預建連接器", "description": "涵蓋監控、ITSM、CI/CD、雲端、通訊與身份管理的企業級連接器。" },
+        { "title": "自訂 Webhook", "description": "透過 Webhook 接收和發送事件，整合任何支援 HTTP 的系統。" },
+        { "title": "REST API 整合", "description": "完整的 REST API 支援，可程式化存取所有平台功能。" },
+        { "title": "雙向資料同步", "description": "不只是單向推送，支援雙向即時資料同步。" },
+        { "title": "連接器開發框架", "description": "開放的連接器開發框架，可自行建立客製連接器。" },
+        { "title": "資料轉換引擎", "description": "內建 ETL 能力，在系統間傳輸資料時自動轉換格式。" }
+      ],
+      "cta": { "headline": "查看完整的整合生態系", "button": "瀏覽整合清單" }
+    },
+    "governance": {
+      "hero": { "headline": "治理與護欄", "subtitle": "治理優先的維運設計。每個操作都在可配置的治理框架內進行。" },
+      "features": [
+        { "title": "細緻 RBAC 權限", "description": "角色型存取控制，可精細到每個操作、每個資源的權限設定。" },
+        { "title": "多層審批流程", "description": "可配置的多層審批工作流，支援序列審批、並行審批和條件審批。" },
+        { "title": "預執行安全檢查", "description": "每個自動化操作在執行前都經過安全規則驗證。" },
+        { "title": "不可篡改稽核日誌", "description": "所有操作產生唯讀日誌，滿足最嚴格的合規要求。" },
+        { "title": "政策即代碼", "description": "以代碼定義治理政策，版本控管、可審查、可重現。" },
+        { "title": "即時合規儀表板", "description": "即時監控合規狀態，自動產出審計報表。" }
+      ],
+      "cta": { "headline": "了解治理優先的維運設計", "button": "預約 Demo" }
+    },
+    "observability": {
+      "hero": { "headline": "可觀測性", "subtitle": "為 IT 團隊提供全面的營運可視性，從日誌到拓撲到瓶頸分析。" },
+      "features": [
+        { "title": "即時日誌監控", "description": "跨系統日誌串流與即時搜尋，秒級回應。" },
+        { "title": "資源拓撲視覺化", "description": "自動繪製服務依賴關係圖，即時呈現系統架構。" },
+        { "title": "瓶頸智慧分析", "description": "AI 自動識別效能瓶頸並提供優化建議。" },
+        { "title": "自訂儀表板", "description": "拖拽式儀表板建立器，展示你最關注的指標。" },
+        { "title": "告警管理", "description": "智慧告警降噪，減少告警疲勞，確保關鍵告警被注意到。" },
+        { "title": "SLA 追蹤", "description": "自動追蹤 SLA 達成率，提前預警可能的違規。" }
+      ],
+      "cta": { "headline": "探索全面的營運可視性", "button": "預約 Demo" }
+    }
+  },
+  "industries": {
+    "financialServices": {
+      "hero": { "headline": "為金融業設計的 AI-First IT 維運", "subtitle": "滿足金融監管合規、加速部署安全性、降低維運風險。" },
+      "challenges": [
+        { "title": "金融監管對稽核的嚴格要求", "description": "金管會、央行等監管機構要求完整的操作追溯與合規報表。" },
+        { "title": "7×24 服務可用性的壓力", "description": "金融服務中斷直接影響客戶資產，MTTR 必須壓到最低。" },
+        { "title": "多系統整合的複雜度", "description": "核心銀行系統、交易平台、合規系統之間需要安全整合。" },
+        { "title": "變更風險與合規衝突", "description": "每次系統變更都可能影響交易安全，需要嚴格的變更管控。" }
+      ],
+      "solutions": [
+        { "challenge": "合規稽核", "solution": "自動產出符合金融監管要求的稽核報告，100% 操作可追溯。" },
+        { "challenge": "服務可用性", "solution": "AI 根因分析將 MTTR 縮短 50%，自動化 Runbook 加速事件回應。" },
+        { "challenge": "系統整合", "solution": "透過安全連接器串接核心銀行系統，不需要開放不必要的存取權限。" },
+        { "challenge": "變更管控", "solution": "標準化部署流程，內建多層審批與自動回滾，變更錯誤率降至 0%。" }
+      ],
+      "compliance": ["SOC 2 Type II（進行中）", "ISO 27001（進行中）", "金融業 IT 審計要求", "不可篡改稽核日誌"],
+      "cta": { "headline": "預約金融業專屬 Demo", "ctaPrimary": "預約 Demo", "ctaSecondary": "下載金融業白皮書" }
+    },
+    "manufacturing": {
+      "hero": { "headline": "為製造業設計的 AI-First IT 維運", "subtitle": "跨國 IT 基礎設施管理、工具整合、新人入職自動化。" },
+      "challenges": [
+        { "title": "跨國 IT 基礎設施管理", "description": "遍佈多國的工廠和辦公室，使用不同的 IT 系統和標準。" },
+        { "title": "20+ 種 IT 工具的孤島", "description": "MES、ERP、SCADA、IT 管理工具之間缺乏自動化串接。" },
+        { "title": "新員工 IT 環境準備耗時", "description": "產線人員頻繁異動，每次入職/離職都需要大量 IT 作業。" },
+        { "title": "OT/IT 融合的安全挑戰", "description": "工業控制系統與企業 IT 的整合需要嚴格的安全控管。" }
+      ],
+      "solutions": [
+        { "challenge": "跨國管理", "solution": "統一的自動化平台，支援多時區、多語言的 IT 維運。" },
+        { "challenge": "工具整合", "solution": "50+ 連接器串接既有系統，消除 80% 的 L1 工單。" },
+        { "challenge": "入職自動化", "solution": "自動化入職流程：帳號開通、權限配置、設備準備，首日 100% IT 就緒。" },
+        { "challenge": "OT/IT 安全", "solution": "支援地端部署與網路隔離，OT 環境資料不離開工廠邊界。" }
+      ],
+      "compliance": ["On-Premises 部署", "網路隔離架構", "RBAC 權限控管", "ISO 27001（進行中）"],
+      "cta": { "headline": "預約製造業專屬 Demo", "ctaPrimary": "預約 Demo", "ctaSecondary": "下載製造業案例" }
+    },
+    "technology": {
+      "hero": { "headline": "為科技業設計的 AI-First IT 維運", "subtitle": "高速迭代環境下的部署治理、可觀測性與自動化。" },
+      "challenges": [
+        { "title": "高頻部署需要自動化治理", "description": "每天數十次部署，手動審查成為瓶頸，但不能犧牲安全性。" },
+        { "title": "微服務架構的可觀測性挑戰", "description": "數百個微服務之間的依賴關係複雜，事件追查困難。" },
+        { "title": "SRE 團隊的 on-call 壓力", "description": "告警風暴頻繁，on-call 輪值壓力大，人才流失風險高。" },
+        { "title": "快速成長帶來的工具蔓延", "description": "團隊快速成長，每個團隊引入自己的工具，缺乏統一管理。" }
+      ],
+      "solutions": [
+        { "challenge": "部署治理", "solution": "自動化 CI/CD 護欄，每次部署自動預檢查、審批、回滾，不降低部署速度。" },
+        { "challenge": "微服務可觀測性", "solution": "AI 自動建立服務拓撲圖，秒級關聯分析定位根因。" },
+        { "challenge": "On-call 壓力", "solution": "智慧告警降噪 + AI 自動處理 L1 事件，減輕 on-call 負擔。" },
+        { "challenge": "工具整合", "solution": "統一整合中樞串接所有工具，建立單一操作入口。" }
+      ],
+      "compliance": ["SOC 2 Type II（進行中）", "CI/CD 整合", "Kubernetes 支援", "OpenTelemetry 相容"],
+      "cta": { "headline": "預約科技業專屬 Demo", "ctaPrimary": "預約 Demo", "ctaSecondary": "查看整合清單" }
+    }
+  },
+  "blog": {
+    "hero": { "headline": "Arova Blog", "subtitle": "AI 驅動 IT 維運的最新觀點、技術深度與產業趨勢。" },
+    "filters": ["全部", "觀點", "技術深度", "產業趨勢", "使用案例", "產品更新"],
+    "articles": [
+      { "title": "什麼是 AI-First IT Operations？完整指南", "category": "觀點", "date": "2026-03-20", "readTime": "8 分鐘", "description": "從概念到實踐，了解 AI 如何從根本改變企業 IT 維運的方式。" },
+      { "title": "Nexus Intelligence 架構解析：5 步驟 AI 推理引擎", "category": "技術深度", "date": "2026-03-18", "readTime": "12 分鐘", "description": "深入了解 Nexus Intelligence 如何感知、理解、規劃、執行和學習。" },
+      { "title": "為什麼傳統 ITSM 不夠用了", "category": "產業趨勢", "date": "2026-03-15", "readTime": "6 分鐘", "description": "規則驅動的 ITSM 工具為什麼跟不上現代企業 IT 的需求。" },
+      { "title": "如何在 4 週內自動化 40% 的 L1 工單", "category": "使用案例", "date": "2026-03-12", "readTime": "10 分鐘", "description": "從零到自動化：一步步的 L1 工單自動化實作指南。" },
+      { "title": "企業 AI 治理：如何確保 AI 在護欄內運作", "category": "觀點", "date": "2026-03-10", "readTime": "8 分鐘", "description": "不是所有 AI 都適合企業環境。治理優先的 AI 才是正確選擇。" },
+      { "title": "金融業 IT 維運的 5 大挑戰與解法", "category": "產業趨勢", "date": "2026-03-08", "readTime": "7 分鐘", "description": "金融監管、服務可用性、合規稽核——金融業 IT 團隊如何應對。" },
+      { "title": "MTTR 縮短 50% 的實戰方法論", "category": "技術深度", "date": "2026-03-05", "readTime": "10 分鐘", "description": "結合 AI 關聯分析與自動化 Runbook 的事件處理最佳實踐。" },
+      { "title": "Arova Nexus v2.1 發布：新增 Slack 整合", "category": "產品更新", "date": "2026-03-01", "readTime": "3 分鐘", "description": "新版本帶來 Slack 雙向整合、批次部署模板和效能提升。" }
+    ],
+    "cta": { "headline": "訂閱 Arova 觀點", "button": "訂閱電子報" }
+  },
+  "glossaryPage": {
+    "hero": { "headline": "AI 維運術語表", "subtitle": "從 AIOps 到 Zero Trust，IT 維運專業術語完整定義。" },
+    "terms": [
+      { "term": "AIOps", "definition": "Artificial Intelligence for IT Operations — 運用 AI 和機器學習增強與自動化 IT 維運流程的方法論。" },
+      { "term": "MTTR", "definition": "Mean Time to Recovery — 平均復原時間，衡量系統從故障中恢復所需的平均時間。" },
+      { "term": "MTTA", "definition": "Mean Time to Acknowledge — 平均確認時間，從告警觸發到有人開始處理的時間。" },
+      { "term": "MTTD", "definition": "Mean Time to Detect — 平均偵測時間，從問題發生到被偵測到的時間。" },
+      { "term": "SRE", "definition": "Site Reliability Engineering — 由 Google 發起的工程實踐，專注於透過軟體工程方法解決維運問題。" },
+      { "term": "Runbook", "definition": "標準操作程序手冊，記錄 IT 團隊處理常見事件或執行特定任務的步驟。Runbook 自動化是將這些步驟程式化執行。" },
+      { "term": "可觀測性 (Observability)", "definition": "透過系統的外部輸出（日誌、指標、追蹤）來推斷系統內部狀態的能力。比傳統監控更全面。" },
+      { "term": "ChatOps", "definition": "將 IT 維運操作整合到協作通訊工具（如 Slack、Teams）中的實踐方式。" },
+      { "term": "JIT Access", "definition": "Just-in-Time 存取控制 — 僅在需要時、有限時間內授予存取權限的安全實踐。" },
+      { "term": "治理護欄 (Governance Guardrails)", "definition": "定義自動化操作可執行邊界的規則和政策，確保 AI 和自動化在安全、合規的框架內運作。" },
+      { "term": "Nexus Intelligence", "definition": "Arova Nexus 的專有 AI 引擎。透過 5 步驟推理流程（感知、理解、規劃、執行、學習）在企業治理框架內自主處理 IT 維運任務。" },
+      { "term": "ITSM", "definition": "IT Service Management — IT 服務管理，設計、交付、管理和改進 IT 服務的實踐與流程集合。" },
+      { "term": "CMDB", "definition": "Configuration Management Database — 配置管理資料庫，記錄 IT 環境中所有配置項目及其關係。" },
+      { "term": "事件關聯 (Event Correlation)", "definition": "分析多個告警和事件之間的關聯性，將大量原始告警歸納為少量有意義的事件的技術。" },
+      { "term": "自動化修復 (Auto-Remediation)", "definition": "系統在偵測到問題後自動執行修復動作，無需人工介入的能力。" }
+    ]
+  },
+  "assessmentPage": {
+    "hero": { "headline": "免費 IT 維運評估", "subtitle": "5 分鐘評估你的 IT 維運自動化潛力，取得個人化的改善建議。" },
+    "questions": [
+      { "question": "你的 IT 團隊規模？", "options": ["少於 20 人", "20-50 人", "50-200 人", "200 人以上"] },
+      { "question": "每月處理多少 L1 工單？", "options": ["少於 100", "100-500", "500-2000", "2000 以上"] },
+      { "question": "使用幾種 IT 管理工具？", "options": ["少於 5 種", "5-10 種", "10-20 種", "20 種以上"] },
+      { "question": "平均事件處理時間 (MTTR)？", "options": ["少於 30 分鐘", "30 分鐘 - 2 小時", "2-4 小時", "4 小時以上"] },
+      { "question": "是否有合規稽核需求？", "options": ["無特別需求", "一般企業合規", "金融/醫療等嚴格合規", "政府/軍事等級"] },
+      { "question": "偏好的部署模式？", "options": ["SaaS 雲端", "VPC 私有雲", "完全地端", "尚未決定"] }
+    ],
+    "results": {
+      "title": "你的 IT 維運自動化潛力評估",
+      "levels": [
+        { "range": "0-40", "label": "起步階段", "description": "你的 IT 維運還有很大的自動化空間。建議從 L1 工單自動化開始。" },
+        { "range": "41-70", "label": "成長階段", "description": "你已經有一些自動化基礎，但工具整合和治理是下一步重點。" },
+        { "range": "71-100", "label": "成熟階段", "description": "你的 IT 維運相對成熟，AI 驅動的智慧化可以帶來下一層級的提升。" }
+      ],
+      "ctaText": "與我們討論你的評估結果"
+    }
+  },
+  "docsPage": {
+    "hero": { "headline": "文件中心", "subtitle": "API 文件、整合指南、快速入門與技術資源。" },
+    "resources": [
+      { "title": "API 參考文件", "description": "完整的 REST API 端點文件，包含認證、請求/回應範例和錯誤處理。", "icon": "code", "status": "即將推出" },
+      { "title": "整合指南", "description": "逐步引導你將 Arova Nexus 與 ServiceNow、Jira、Slack 等系統整合。", "icon": "plug", "status": "即將推出" },
+      { "title": "快速入門指南", "description": "從安裝到第一個自動化工作流，30 分鐘內上手 Arova Nexus。", "icon": "rocket", "status": "即將推出" },
+      { "title": "SDK 文件", "description": "Python 和 JavaScript SDK 的完整使用指南與範例程式碼。", "icon": "package", "status": "即將推出" }
+    ],
+    "cta": { "headline": "需要技術支援？", "ctaPrimary": "聯絡技術團隊", "ctaSecondary": "預約技術 Demo" }
+  },
+  "homeAdditions": {
+    "logoWall": {
+      "title": "受到企業團隊信任",
+      "logos": ["ASUS ExpertHub", "AWS", "Azure", "ServiceNow", "Jira", "Datadog", "Prometheus", "Slack"]
+    },
+    "nexusOverview": {
+      "title": "Nexus Intelligence 如何運作",
+      "subtitle": "5 步驟 AI 推理引擎：從感知到學習的完整閉環",
+      "steps": ["感知", "理解", "規劃", "執行", "學習"],
+      "learnMore": "深入了解 Nexus Intelligence"
+    },
+    "metricsWall": {
+      "title": "客戶成果",
+      "items": [
+        { "value": "3天→2小時", "label": "部署時間" },
+        { "value": "MTTR -45%", "label": "事件回應時間" },
+        { "value": "L1 工單 -80%", "label": "手動工單消除" },
+        { "value": "首日就緒 100%", "label": "新人 IT 環境" }
+      ]
+    },
+    "multiPathCta": {
+      "headline": "選擇你的下一步",
+      "options": [
+        { "title": "預約 Demo", "description": "30 分鐘平台導覽，看看 Nexus Intelligence 的實際操作。", "button": "預約 Demo", "href": "/contact" },
+        { "title": "免費評估", "description": "5 分鐘評估你的 IT 維運自動化潛力。", "button": "開始評估", "href": "/assessment" },
+        { "title": "下載指南", "description": "AI-First IT Operations 完整指南，深入了解前沿趨勢。", "button": "免費下載", "href": "/resources" }
+      ]
+    }
   }
 }
