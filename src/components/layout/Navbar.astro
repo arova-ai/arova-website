@@ -11,6 +11,7 @@ interface Props {
 const { locale, currentPath = '' } = Astro.props;
 const t = getTranslation(locale);
 const altLocale = getAlternateLocale(locale);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const navLinks = [
   { label: t.nav.platform, href: getLocalePath(locale, '/platform') },
@@ -45,7 +46,7 @@ const navLinks = [
     <div class="flex items-center gap-3">
       <!-- Language Switcher -->
       <a
-        href={`/${altLocale}${currentPath}`}
+        href={`${base}/${altLocale}${currentPath}`}
         class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
@@ -70,6 +71,7 @@ const navLinks = [
           langSwitchLabel={t.nav.langSwitch}
           altLocale={altLocale}
           bookDemoLabel={t.nav.bookDemo}
+          base={base}
         />
       </div>
     </div>

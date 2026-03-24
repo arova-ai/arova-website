@@ -16,6 +16,8 @@ export function getAlternateLocale(locale: Locale): Locale {
   return locale === 'zh-TW' ? 'en' : 'zh-TW';
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export function getLocalePath(locale: Locale, path: string = '') {
-  return `/${locale}${path}`;
+  return `${base}/${locale}${path}`;
 }
