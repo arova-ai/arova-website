@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Card from '../../components/ui/Card.astro';
+import { getTranslation, getLocalePath, getLocaleRouteParams } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return getLocaleRouteParams();
+}
+
+const locale = (Astro.props.locale ?? "zh-TW") as Locale;
+const t = getTranslation(locale);
+---
+
+<BaseLayout title={t.meta.trust.title} description={t.meta.trust.description} locale={locale} currentPath="/trust">
+  <PageLayout locale={locale} currentPath="/trust">
+
+    <HeroSection headline={t.trust.hero.headline} subtitle={t.trust.hero.subtitle} />
+
+    <!-- Certifications -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.trust.certifications.title} />
+        <div class="grid sm:grid-cols-3 gap-6">
+          {t.trust.certifications.items.map((cert) => (
+            <Card class="text-center">
+              <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <h3 class="text-lg font-semibold text-foreground mb-1">{cert.name}</h3>
+              <span class="inline-block px-2.5 py-0.5 text-xs rounded-full bg-primary/10 text-primary mb-3">{cert.status}</span>
+              <p class="text-sm text-muted-foreground">{cert.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Architecture -->
+    <section class="py-20 bg-surface-panel border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.trust.securityArch.title} />
+        <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {t.trust.securityArch.items.map((item) => (
+            <div class="flex items-start gap-4 p-5 rounded-xl border border-white/10 bg-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0 mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              <div>
+                <h3 class="text-sm font-semibold text-foreground mb-1">{item.title}</h3>
+                <p class="text-xs text-muted-foreground">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployment Models -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.trust.deployment.title} />
+        <div class="grid sm:grid-cols-3 gap-6">
+          {t.trust.deployment.items.map((model) => (
+            <Card class="text-center relative overflow-hidden">
+              <span class="absolute top-3 right-3 px-2.5 py-0.5 text-xs rounded-full bg-accent/10 text-accent">{model.badge}</span>
+              <h3 class="text-lg font-semibold text-foreground mb-3 mt-4">{model.name}</h3>
+              <p class="text-sm text-muted-foreground">{model.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsible AI Governance -->
+    <section class="py-20 bg-surface-panel border-y border-white/5">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-foreground mb-4 text-center">{t.trust.governance.title}</h2>
+        <p class="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">{t.trust.governance.description}</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {t.trust.governance.items.map((item) => (
+            <div class="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+              <span class="text-sm text-foreground">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      headline={t.trust.cta.headline}
+      primaryLabel={t.trust.cta.ctaPrimary}
+      primaryHref={getLocalePath(locale, '/contact')}
+      secondaryLabel={t.trust.cta.ctaSecondary}
+      secondaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

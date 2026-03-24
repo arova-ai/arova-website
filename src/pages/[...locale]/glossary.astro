@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Card from '../../components/ui/Card.astro';
+import { getTranslation, getLocalePath, getLocaleRouteParams } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return getLocaleRouteParams();
+}
+
+const locale = (Astro.props.locale ?? "zh-TW") as Locale;
+const t = getTranslation(locale);
+const glossary = t.glossaryPage;
+---
+
+<BaseLayout title={t.meta.glossary.title} description={t.meta.glossary.description} locale={locale} currentPath="/glossary">
+  <PageLayout locale={locale} currentPath="/glossary">
+
+    <HeroSection headline={glossary.hero.headline} subtitle={glossary.hero.subtitle} />
+
+    <!-- Terms List -->
+    <section class="py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-6">
+          {glossary.terms.map((term) => (
+            <div class="p-5 rounded-xl border border-white/10 bg-white/5">
+              <h3 class="text-base font-bold text-foreground mb-2">{term.name}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">{term.definition}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </PageLayout>
+</BaseLayout>

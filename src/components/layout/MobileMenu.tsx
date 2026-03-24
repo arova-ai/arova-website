@@ -14,9 +14,11 @@ interface Props {
   altLocale: string;
   bookDemoLabel: string;
   base?: string;
+  altLocaleHref: string;
+  contactHref: string;
 }
 
-export default function MobileMenu({ locale, currentPath, navLinks, langSwitchLabel, altLocale, bookDemoLabel, base = '' }: Props) {
+export default function MobileMenu({ navLinks, langSwitchLabel, bookDemoLabel, altLocaleHref, contactHref }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -55,14 +57,14 @@ export default function MobileMenu({ locale, currentPath, navLinks, langSwitchLa
               ))}
               <hr className="border-white/10 my-2" />
               <a
-                href={`${base}/${altLocale}${currentPath}`}
+                href={altLocaleHref}
                 className="px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg transition-colors flex items-center gap-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                 {langSwitchLabel}
               </a>
               <a
-                href={`${base}/${locale}/contact`}
+                href={contactHref}
                 className="mt-2 flex items-center justify-center px-5 py-2.5 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary/90 transition-colors glow-cyan"
               >
                 {bookDemoLabel}

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Card from '../../components/ui/Card.astro';
+import { getTranslation, getLocalePath, getLocaleRouteParams } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return getLocaleRouteParams();
+}
+
+const locale = (Astro.props.locale ?? "zh-TW") as Locale;
+const t = getTranslation(locale);
+---
+
+<BaseLayout title={t.meta.experthub.title} description={t.meta.experthub.description} locale={locale} currentPath="/experthub">
+  <PageLayout locale={locale} currentPath="/experthub">
+
+    <HeroSection headline={t.experthub.hero.headline} subtitle={t.experthub.hero.subtitle} />
+
+    <!-- What is ExpertHub -->
+    <section class="py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-foreground mb-4">{t.experthub.whatIs.title}</h2>
+        <p class="text-muted-foreground leading-relaxed">{t.experthub.whatIs.description}</p>
+      </div>
+    </section>
+
+    <!-- Why ExpertHub -->
+    <section class="py-20 bg-surface-panel border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.experthub.whyExpertHub.title} />
+        <div class="grid sm:grid-cols-2 gap-6">
+          {t.experthub.whyExpertHub.items.map((item) => (
+            <Card>
+              <h3 class="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Bundles -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.experthub.bundles.title} />
+        <div class="grid sm:grid-cols-3 gap-6">
+          {t.experthub.bundles.items.map((bundle) => (
+            <Card class="text-center relative overflow-hidden">
+              <span class="absolute top-3 right-3 px-2.5 py-0.5 text-xs rounded-full bg-accent/10 text-accent">{bundle.badge}</span>
+              <h3 class="text-lg font-semibold text-foreground mb-3 mt-4">{bundle.name}</h3>
+              <p class="text-sm text-muted-foreground">{bundle.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents -->
+    <section class="py-20 bg-surface-panel border-y border-white/5">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-foreground mb-4 text-center">{t.experthub.documents.title}</h2>
+        <p class="text-muted-foreground text-center mb-8">{t.experthub.documents.description}</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {t.experthub.documents.items.map((doc) => (
+            <Card class="text-center cursor-pointer group">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+              </div>
+              <h3 class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1">{doc.title}</h3>
+              <span class="text-xs text-muted-foreground">{doc.type} · {doc.pages}</span>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      headline={t.experthub.cta.headline}
+      primaryLabel={t.experthub.cta.ctaPrimary}
+      primaryHref="#"
+      secondaryLabel={t.experthub.cta.ctaSecondary}
+      secondaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

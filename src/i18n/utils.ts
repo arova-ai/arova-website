@@ -18,6 +18,26 @@ export function getAlternateLocale(locale: Locale): Locale {
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
+/**
+ * Get the path for a given locale.
+ * zh-TW (default) → /base/path (no locale prefix)
+ * en → /base/en/path
+ */
 export function getLocalePath(locale: Locale, path: string = '') {
+  if (locale === defaultLocale) {
+    return `${base}${path}` || `${base}/`;
+  }
   return `${base}/${locale}${path}`;
+}
+
+/**
+ * Get the locale route param for getStaticPaths.
+ * zh-TW → undefined (root)
+ * en → 'en'
+ */
+export function getLocaleRouteParams() {
+  return locales.map((locale) => ({
+    params: { locale: locale === defaultLocale ? undefined : locale },
+    props: { locale },
+  }));
 }

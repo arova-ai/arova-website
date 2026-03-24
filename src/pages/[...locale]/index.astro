@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import Card from '../../components/ui/Card.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Badge from '../../components/ui/Badge.astro';
+import HeroNodeNetwork from '../../components/visuals/HeroNodeNetwork.tsx';
+import PlatformBlockDiagram from '../../components/visuals/PlatformBlockDiagram.tsx';
+import ProcessFlow from '../../components/visuals/ProcessFlow.astro';
+import TrustBadges from '../../components/sections/TrustBadges.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import LogoWall from '../../components/sections/LogoWall.astro';
+import MetricsWall from '../../components/sections/MetricsWall.astro';
+import MultiPathCTA from '../../components/sections/MultiPathCTA.astro';
+import Accordion from '../../components/ui/Accordion.tsx';
+import { getTranslation, getLocalePath, getLocaleRouteParams } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return getLocaleRouteParams();
+}
+
+const locale = (Astro.props.locale ?? "zh-TW") as Locale;
+const t = getTranslation(locale);
+---
+
+<BaseLayout title={t.meta.home.title} description={t.meta.home.description} locale={locale} currentPath="">
+  <PageLayout locale={locale} currentPath="">
+
+    <!-- Hero -->
+    <section class="relative pt-16 pb-28 lg:pt-28 lg:pb-36 overflow-hidden">
+      <!-- Atmospheric orbs -->
+      <div class="orb orb-cyan orb-float w-[600px] h-[600px] -top-20 -right-40 opacity-60" />
+      <div class="orb orb-purple w-[400px] h-[400px] top-1/2 -left-40 opacity-40" />
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <Badge class="mb-8">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              {t.home.hero.badge}
+            </Badge>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+              <span class="gradient-text">{t.home.hero.headline}</span>
+              <br />
+              <span class="text-foreground">{t.home.hero.tagline}</span>
+            </h1>
+            <p class="text-lg text-muted-foreground mb-10 leading-relaxed max-w-xl">
+              {t.home.hero.subtitle}
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <Button href={getLocalePath(locale, '/platform')} variant="primary" size="lg">{t.home.hero.ctaPrimary}</Button>
+              <Button href={getLocalePath(locale, '/contact')} variant="outline" size="lg">{t.home.hero.ctaSecondary}</Button>
+            </div>
+
+            {/* Hero Metrics — prominent stat cards */}
+            {t.home.hero.metrics && (
+              <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {t.home.hero.metrics.map((m: { label: string; value: string }) => (
+                  <div class="glass-card p-4 text-center">
+                    <div class="stat-value text-3xl mb-1">{m.value}</div>
+                    <div class="text-xs text-muted-foreground leading-tight">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div class="hidden lg:block">
+            <HeroNodeNetwork client:visible />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Wall -->
+    {t.homeAdditions?.logoWall && (
+      <LogoWall title={t.homeAdditions.logoWall.title} logos={t.homeAdditions.logoWall.logos ?? []} />
+    )}
+
+    <!-- Core Value -->
+    <section class="py-24 bg-surface-panel section-gradient-top">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.home.coreValue.title} />
+        <div class="grid md:grid-cols-3 gap-8 stagger-children">
+          {t.home.coreValue.cards.map((card) => (
+            <Card class={`text-center glow-${card.color}`}>
+              <div class={`w-16 h-16 rounded-2xl bg-${card.color}-400/10 flex items-center justify-center mx-auto mb-5`}>
+                {card.icon === 'zap' && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class={`text-${card.color}-400`}><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>}
+                {card.icon === 'shield' && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class={`text-${card.color}-400`}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>}
+                {card.icon === 'sliders' && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>}
+              </div>
+              <h3 class="text-xl font-semibold text-foreground mb-3">{card.title}</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">{card.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="py-28 relative overflow-hidden">
+      <div class="orb orb-purple w-[300px] h-[300px] top-0 right-0 opacity-30" />
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <SectionTitle title={t.home.painPoints.title} />
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+          {t.home.painPoints.items.map((item) => (
+            <Card>
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </div>
+              <h3 class="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Nexus Intelligence Overview -->
+    <section class="py-28 bg-gradient-to-b from-surface-dark to-background relative overflow-hidden section-gradient-top">
+      <div class="orb orb-cyan w-[500px] h-[500px] -bottom-40 right-0 opacity-30" />
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="reveal">
+            {t.homeAdditions?.nexusOverview ? (
+              <Fragment>
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-5 tracking-tight">{t.homeAdditions.nexusOverview.title}</h2>
+                <p class="text-lg text-muted-foreground mb-6 leading-relaxed">{t.homeAdditions.nexusOverview.subtitle}</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                  {(t.homeAdditions.nexusOverview.steps ?? t.homeAdditions.nexusOverview.highlights?.map((h: any) => h.title) ?? []).map((step: string) => (
+                    <span class="px-3 py-1.5 text-sm rounded-lg bg-primary/10 text-primary border border-primary/20">{step}</span>
+                  ))}
+                </div>
+                <a href={getLocalePath(locale, '/platform/nexus-intelligence')} class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium group">
+                  {t.homeAdditions.nexusOverview.learnMore ?? t.homeAdditions.nexusOverview.link?.label ?? 'Learn more'}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-5 tracking-tight">{t.home.platformOverview.title}</h2>
+                <p class="text-lg text-muted-foreground mb-8 leading-relaxed">{t.home.platformOverview.subtitle}</p>
+                <a href={getLocalePath(locale, '/platform')} class="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium group">
+                  {t.home.platformOverview.exploreLink}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </Fragment>
+            )}
+          </div>
+          <div>
+            <PlatformBlockDiagram client:visible layers={t.platform.architecture.layers} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.home.howItWorks.title} />
+        <div class="reveal">
+          <ProcessFlow steps={t.home.howItWorks.steps} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Preview -->
+    <section class="py-24 bg-surface-panel section-gradient-top">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.home.solutionsPreview.title} />
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto stagger-children">
+          {t.home.solutionsPreview.items.map((item) => (
+            <div class="flex items-center gap-3 p-4 rounded-xl border border-white/6 bg-white/[0.03] hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0"><path d="M20 6 9 17l-5-5"/></svg>
+              <span class="text-sm text-foreground">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Wall -->
+    {t.homeAdditions?.metricsWall && (
+      <MetricsWall title={t.homeAdditions.metricsWall.title} items={t.homeAdditions.metricsWall.items ?? t.homeAdditions.metricsWall.metrics ?? []} />
+    )}
+
+    <!-- Trust -->
+    <TrustBadges title={t.home.trust.title} items={t.home.trust.items} />
+
+    <!-- FAQ -->
+    <section class="py-28 relative overflow-hidden">
+      <div class="orb orb-cyan w-[300px] h-[300px] -top-20 -left-20 opacity-20" />
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <SectionTitle title={t.home.faq.title} />
+        <Accordion client:visible items={t.home.faq.items} />
+      </div>
+    </section>
+
+    <!-- Multi-Path CTA -->
+    {t.homeAdditions?.multiPathCta ? (
+      <MultiPathCTA
+        headline={t.homeAdditions.multiPathCta.headline ?? t.homeAdditions.multiPathCta.title}
+        options={t.homeAdditions.multiPathCta.options ?? t.homeAdditions.multiPathCta.paths}
+        locale={locale}
+      />
+    ) : (
+      <CTASection
+        headline={t.home.cta.headline}
+        primaryLabel={t.home.cta.button}
+        primaryHref={getLocalePath(locale, '/contact')}
+      />
+    )}
+
+  </PageLayout>
+</BaseLayout>
