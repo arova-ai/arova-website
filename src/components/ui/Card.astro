@@ -9,8 +9,8 @@ const { glass = true, class: className = '', hover = true } = Astro.props;
 
 const classes = [
   glass ? 'glass-card' : 'bg-card border border-border rounded-xl',
-  hover ? 'hover:-translate-y-1 transition-transform duration-300' : '',
-  'p-6',
+  hover ? 'hover:-translate-y-1.5 transition-all duration-300' : '',
+  'p-7',
   className,
 ].join(' ');
 ---

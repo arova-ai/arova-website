@@ -9,8 +9,13 @@ interface Props {
 const { title, subtitle, centered = true, class: className = '' } = Astro.props;
 ---
 
-<div class={`mb-12 ${centered ? 'text-center' : ''} ${className}`}>
-  <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">{title}</h2>
+<div class={`mb-16 reveal ${centered ? 'text-center' : ''} ${className}`}>
+  {centered && (
+    <div class="flex justify-center mb-5">
+      <div class="w-12 h-1 rounded-full bg-gradient-to-r from-primary to-accent" />
+    </div>
+  )}
+  <h2 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-4 tracking-tight">{title}</h2>
   {subtitle && (
     <p class="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{subtitle}</p>
   )}
