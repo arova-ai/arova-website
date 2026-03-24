@@ -3,7 +3,8 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://arova.io',
+  site: 'https://arova-ai.github.io',
+  base: '/arova-website',
   output: 'static',
   integrations: [react()],
   vite: {
