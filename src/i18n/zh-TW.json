@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "home": { "title": "Arova Nexus — AI-First IT 維運平台", "description": "Arova Nexus 是由 Arova 打造的 AI-First IT Operations Platform，協助企業將 IT 維運從人工處理推進到 AI 驅動的自動化。" },
+    "platform": { "title": "平台 — Arova Nexus", "description": "了解 Arova Nexus 如何將 AI Agent、流程自動化、系統整合與治理控管整合為一個統一平台。" },
+    "solutions": { "title": "解決方案 — Arova Nexus", "description": "探索 Arova Nexus 針對企業 IT 維運場景設計的解決方案。" },
+    "capabilities": { "title": "平台能力 — Arova Nexus", "description": "從 AI Agent 到可觀測性，了解 Arova Nexus 的模組化平台能力。" },
+    "caseStudies": { "title": "成功案例 — Arova Nexus", "description": "看看頂尖企業如何利用 Arova Nexus 轉型他們的 IT 營運模式。" },
+    "resources": { "title": "資源中心 — Arova Nexus", "description": "探索白皮書、架構指南與深入觀點，全面了解 AI 驅動的 IT 維運。" },
+    "about": { "title": "關於 Arova", "description": "了解 Arova 的使命、願景，以及我們為何打造 Arova Nexus。" },
+    "experthub": { "title": "ASUS ExpertHub — Arova Nexus", "description": "透過 ASUS ExpertHub 取得 Arova Nexus 的解決方案與資源。" },
+    "contact": { "title": "預約 Demo / 聯絡我們 — Arova Nexus", "description": "預約產品展示，或聯絡 Arova 團隊討論你的 IT 維運需求。" }
+  },
+  "nav": {
+    "home": "首頁",
+    "platform": "平台",
+    "solutions": "解決方案",
+    "capabilities": "平台能力",
+    "caseStudies": "成功案例",
+    "resources": "資源",
+    "about": "關於我們",
+    "experthub": "ASUS ExpertHub",
+    "bookDemo": "預約 Demo",
+    "langSwitch": "EN"
+  },
+  "home": {
+    "hero": {
+      "badge": "Enterprise AI-First Platform",
+      "headline": "Arova Nexus",
+      "tagline": "讓 AI 成為你的 IT 維運加速器",
+      "subtitle": "Arova Nexus 是由 Arova 打造的 AI-First IT Operations Platform，協助企業將 IT 維運從人工處理推進到 AI 驅動的自動化、自主化與治理控管。",
+      "ctaPrimary": "了解 Arova Nexus",
+      "ctaSecondary": "預約展示"
+    },
+    "coreValue": {
+      "title": "打造更快、更穩、更可控的 IT 維運模式",
+      "cards": [
+        { "icon": "zap", "title": "更快", "description": "自動化繁瑣任務，將處置時間從數小時縮短至數分鐘。", "color": "amber" },
+        { "icon": "shield", "title": "更穩", "description": "AI 輔助根因分析，降低人為錯誤，提升系統可用性。", "color": "emerald" },
+        { "icon": "sliders", "title": "更可控", "description": "內建審核機制與完整稽核軌跡，確保每次變更都在掌控中。", "color": "primary" }
+      ]
+    },
+    "painPoints": {
+      "title": "你是否也面臨這些維運挑戰？",
+      "items": [
+        { "title": "處理重複性工單耗時", "description": "IT 人員每天花費大量時間處理密碼重置、權限申請等低價值工單。" },
+        { "title": "跨系統操作斷層", "description": "需要在多個監控、告警和部署工具間切換，無法形成流暢工作流。" },
+        { "title": "缺乏清晰的稽核軌跡", "description": "手動操作難以追蹤，不符合企業嚴格的合規和審計要求。" },
+        { "title": "知識傳承困難", "description": "資深人員的排障經驗難以系統化，新手上手時間長。" },
+        { "title": "自動化腳本維護成本高", "description": "散落各處的自動化腳本缺乏統一管理，成為技術債。" }
+      ]
+    },
+    "platformOverview": {
+      "title": "為 AI 驅動企業 IT 維運而設計的平台",
+      "subtitle": "Arova Nexus 將 AI Agent、流程自動化、系統整合、治理控管與營運可視性整合成一個統一平台。",
+      "exploreLink": "探索平台架構"
+    },
+    "howItWorks": {
+      "title": "如何運作",
+      "steps": [
+        { "number": "1", "title": "感知與整合", "description": "介接現有監控、工單與基礎設施" },
+        { "number": "2", "title": "理解與分析", "description": "AI Agent 解析意圖與系統狀態" },
+        { "number": "3", "title": "決策與規劃", "description": "生成執行計畫與自動化工作流" },
+        { "number": "4", "title": "自動執行或送審後執行", "description": "依據治理策略進行安全操作" },
+        { "number": "5", "title": "監控、記錄並持續優化", "description": "完整稽核與 AI 模型迭代" }
+      ]
+    },
+    "solutionsPreview": {
+      "title": "針對真實企業 IT 場景設計",
+      "items": [
+        "AI 驅動的日常 IT 維運",
+        "智慧部署與變更治理",
+        "事件調查與根因分析",
+        "合規與存取權限控管",
+        "企業工作流無縫整合"
+      ]
+    },
+    "trust": {
+      "title": "為企業環境而設計",
+      "items": [
+        "支援地端部署 (On-prem ready)",
+        "治理優先的維運設計",
+        "完整的稽核軌跡與執行透明度",
+        "高度彈性的企業整合能力",
+        "Secure-by-design 安全架構"
+      ]
+    },
+    "faq": {
+      "title": "常見問題",
+      "items": [
+        { "question": "Arova Nexus 是什麼？", "answer": "Arova Nexus 是一個 AI-First 的 IT 營運平台，結合了 AI Agent、自動化引擎與企業治理，幫助 IT 團隊更高效地管理基礎設施與維運任務。" },
+        { "question": "適合哪些團隊使用？", "answer": "主要為中大型企業的 IT 營運、SRE (Site Reliability Engineering)、DevOps 及雲端管理團隊所設計。" },
+        { "question": "是否支援地端 (On-Premises) 部署？", "answer": "是的，Arova Nexus 支援完全的地端部署或 VPC 內私有雲部署，確保企業資料的絕對安全與合規。" },
+        { "question": "可以整合哪些現有系統？", "answer": "支援整合常見的 ITSM (如 Jira, ServiceNow)、監控工具 (Datadog, Prometheus)、通訊軟體 (Slack, Teams) 及各大雲端平台。" }
+      ]
+    },
+    "cta": {
+      "headline": "準備好讓 AI 參與你的 IT 維運了嗎？",
+      "button": "聯絡業務"
+    }
+  },
+  "platform": {
+    "hero": {
+      "headline": "為 AI 驅動企業 IT 維運而設計的平台",
+      "subtitle": "Arova Nexus 將 AI Agent、流程自動化、系統整合、治理控管與營運可視性整合成一個統一平台。"
+    },
+    "whatIs": {
+      "title": "Arova Nexus 是什麼？",
+      "description": "不同於單一用途的自動化工具，Arova Nexus 是一個原生的 AI-First 平台。它不僅僅是執行腳本，而是具備理解上下文、做出決策並在企業安全護欄內行動的智慧中樞。",
+      "whyTitle": "為什麼企業 IT 需要新的營運模式",
+      "whyPoints": [
+        "降低維運摩擦與手動重複操作",
+        "提升執行一致性與可預測性",
+        "強化治理審核與變更控管",
+        "增加跨系統的行動與結果可視性",
+        "支持規模化而不需等比增加人力"
+      ]
+    },
+    "architecture": {
+      "title": "平台架構總覽",
+      "layers": [
+        { "name": "體驗層 (Experience Layer)", "description": "自然語言介面，讓使用者透過對話進行操作" },
+        { "name": "AI 代理層 (AI Agent Layer)", "description": "領域專屬的 AI 代理，理解意圖並規劃任務" },
+        { "name": "自動化引擎 (Automation Engine)", "description": "工作流編排與自動化執行引擎" },
+        { "name": "整合中樞 (Integration Hub)", "description": "API 與外掛生態系，連接企業既有系統" },
+        { "name": "治理與護欄 (Governance & Guardrails)", "description": "RBAC、審批流程與安全護欄機制" },
+        { "name": "可觀測性與數據智能 (Observability)", "description": "日誌分析、資源拓撲與執行智慧分析" }
+      ]
+    },
+    "deployment": {
+      "title": "為控制、彈性與企業級需求而設計",
+      "items": [
+        { "title": "支援地端部署架構", "description": "完全控制資料與執行環境" },
+        { "title": "角色型權限控管", "description": "細緻的存取控制與操作權限管理" },
+        { "title": "審批感知工作流設計", "description": "內建多層審批與自動化升級機制" },
+        { "title": "稽核日誌與可追溯性", "description": "完整的操作紀錄，滿足合規需求" },
+        { "title": "企業級整合架構", "description": "靈活介接各類企業系統與服務" }
+      ]
+    },
+    "cta": {
+      "headline": "看看 Arova Nexus 如何融入你的營運環境",
+      "ctaPrimary": "預約 Demo",
+      "ctaSecondary": "聯絡團隊"
+    }
+  },
+  "solutions": {
+    "hero": {
+      "headline": "現代企業 IT 維運的解決方案",
+      "subtitle": "探索 Arova Nexus 如何幫助團隊以更快、更一致、更可控的方式運作，解決各類 IT 維運痛點。"
+    },
+    "items": [
+      {
+        "title": "AI 驅動的日常 IT 維運",
+        "pain": "IT 團隊每天被大量重複性工單淹沒，難以專注於高價值任務。",
+        "help": "Arova Nexus 透過 AI Agent 自動處理 L1 層級的日常工單，如密碼重設、存取權限異動等。AI 理解請求意圖後，在治理護欄內自動完成操作，並保留完整稽核紀錄。",
+        "outcomes": ["L1 工單自動處理率提升 40%", "IT 人員專注於高價值策略任務", "每次操作均具完整稽核軌跡"]
+      },
+      {
+        "title": "智慧部署與變更治理",
+        "pain": "手動部署流程繁瑣且容易出錯，缺乏標準化的變更管控機制。",
+        "help": "Arova Nexus 提供自動化部署工作流，內建預檢查、多層審批和回滾機制。每次變更都經過標準化流程，確保一致性與安全性。",
+        "outcomes": ["變更前置時間縮短 60%", "設定錯誤率趨近於零", "標準化部署流程，消除人為疏漏"]
+      },
+      {
+        "title": "事件調查與根因分析",
+        "pain": "系統異常發生時，需要在多個工具之間手動追查，耗時費力。",
+        "help": "Arova Nexus 的 AI Agent 自動聚合跨系統的日誌與指標，進行智慧關聯分析，快速鎖定根因並提供建議處置方案。",
+        "outcomes": ["MTTR 縮短 50%", "AI 驅動的自動關聯與建議", "持續累積組織排障知識庫"]
+      },
+      {
+        "title": "合規與存取權限控管",
+        "pain": "權限管理分散，難以滿足嚴格的合規審計要求。",
+        "help": "Arova Nexus 提供 Just-in-Time (JIT) 存取控制，結合自動化合規報表產出，確保每個存取動作都可追溯、可審計。",
+        "outcomes": ["實現 JIT 存取控制，消除閒置特權", "自動產出合規報表", "滿足金融、製造等行業審計要求"]
+      },
+      {
+        "title": "企業工作流無縫整合",
+        "pain": "企業內部工具分散，IT 流程難以自動化串接。",
+        "help": "Arova Nexus 作為統一的整合中樞，透過 50+ 連接器與自訂 Webhook/API，打破系統孤島，實現跨工具的端到端自動化流程。",
+        "outcomes": ["打破工具孤島，建立統一操作入口", "跨系統自動化工作流", "新系統整合時間大幅縮短"]
+      }
+    ],
+    "summary": {
+      "headline": "Arova Nexus 協助團隊以更快、更一致、更可控的方式運作"
+    },
+    "cta": {
+      "headline": "了解 Arova Nexus 如何支援你的營運重點",
+      "ctaPrimary": "預約 Demo",
+      "ctaSecondary": "聯絡業務"
+    }
+  },
+  "capabilities": {
+    "hero": {
+      "headline": "Arova Nexus 平台能力",
+      "subtitle": "從 AI Agent、流程自動化、整合中樞，到治理、可觀測性與分析報表，Arova Nexus 以模組化能力支撐企業級 IT 維運升級。"
+    },
+    "intro": {
+      "title": "支撐企業 IT 維運的核心能力"
+    },
+    "items": [
+      {
+        "title": "AI Agent",
+        "description": "透過自然語言理解使用者意圖，動態規劃並執行跨系統任務。AI Agent 具備上下文記憶，可持續學習和優化。",
+        "highlights": ["NLP 語意解析", "動態任務規劃", "上下文記憶"]
+      },
+      {
+        "title": "Workflow Automation",
+        "description": "視覺化的低代碼工作流編輯器，支援狀態機、條件分支與並行執行，讓複雜的 IT 流程自動化變得簡單。",
+        "highlights": ["低代碼拖拽設計", "狀態機引擎", "並行任務執行"]
+      },
+      {
+        "title": "Integration Hub",
+        "description": "內建 50+ 企業級連接器，支援自訂 Webhook 與 API 介接，實現雙向資料同步與系統整合。",
+        "highlights": ["50+ 連接器", "自訂 Webhook/API", "雙向資料同步"]
+      },
+      {
+        "title": "Governance & Guardrails",
+        "description": "細緻的 RBAC 權限控管、多層審批流程、預執行安全檢查，確保每個操作都在治理框架內進行。",
+        "highlights": ["細緻 RBAC 權限", "多層審批流程", "預執行安全防護"]
+      },
+      {
+        "title": "Observability",
+        "description": "即時日誌串流、資源拓撲視覺化、系統瓶頸分析，為 IT 團隊提供全面的營運可視性。",
+        "highlights": ["即時日誌監控", "資源拓撲視覺化", "瓶頸智慧分析"]
+      },
+      {
+        "title": "Analytics & Reporting",
+        "description": "自動化 ROI 儀表板、SLA 達成率分析、自訂稽核報表，用數據驅動維運決策與持續改善。",
+        "highlights": ["ROI 儀表板", "SLA 分析", "自訂稽核報表"]
+      }
+    ],
+    "cta": {
+      "headline": "探索 Arova Nexus 如何提升你的 IT 維運能力",
+      "button": "預約 Demo"
+    }
+  },
+  "caseStudies": {
+    "hero": {
+      "headline": "成功案例與應用情境",
+      "subtitle": "看看頂尖企業如何利用 Arova Nexus 轉型他們的 IT 營運模式。"
+    },
+    "items": [
+      {
+        "title": "大型金融企業導入部署治理流程",
+        "background": "一家擁有數千名員工的大型金融機構，其 IT 團隊每週需處理數十次應用程式部署，傳統的手動部署流程經常因為設定錯誤導致服務中斷。",
+        "challenge": "手動部署流程平均耗時 3 天，設定錯誤率達 15%，且缺乏標準化的變更審批機制，無法滿足金融監管機構的合規要求。",
+        "implementation": "導入 Arova Nexus 的自動化部署工作流，建立標準化的預檢查與多層審批機制，並整合現有的 CI/CD 工具鏈。",
+        "outcomes": ["部署時間從 3 天縮短至 2 小時", "設定錯誤率降至 0%", "順利通過金融業年度 IT 審計"]
+      },
+      {
+        "title": "知名電商加速異常調查與根因分析",
+        "background": "一家日活躍用戶超過百萬的電商平台，其 SRE 團隊經常面對大規模的系統異常事件，需要在多個監控系統間手動追查根因。",
+        "challenge": "平均異常處理時間 (MTTR) 超過 4 小時，SRE 團隊 on-call 壓力極大，且每次排障的經驗知識無法有效傳承。",
+        "implementation": "部署 Arova Nexus 的 AI 驅動事件調查模組，自動聚合 Datadog、Prometheus 與應用程式日誌，進行智慧關聯分析。",
+        "outcomes": ["MTTR 縮短 45%", "SRE on-call 壓力顯著下降", "建立組織級排障知識庫"]
+      },
+      {
+        "title": "製造業大廠整合既有工具提升自動化",
+        "background": "一家全球知名的製造業企業，擁有遍佈多國的 IT 基礎設施，使用超過 20 種不同的 IT 管理工具。",
+        "challenge": "工具孤島嚴重，L1 層級的權限申請工單佔據 IT 服務台 60% 的工作量，新員工入職 IT 環境準備耗時超過一週。",
+        "implementation": "以 Arova Nexus 作為統一整合中樞，串接 ServiceNow、Active Directory、Azure AD 等核心系統，建立跨工具的自動化工作流。",
+        "outcomes": ["消除 80% 的 L1 權限申請工單", "實現跨系統自動化工作流", "新員工 IT 環境首日 100% 準備就緒"]
+      }
+    ],
+    "cta": {
+      "headline": "想了解 Arova Nexus 如何幫助你的團隊？",
+      "button": "預約 Demo"
+    }
+  },
+  "resources": {
+    "hero": {
+      "headline": "資源中心",
+      "subtitle": "探索白皮書、架構指南與深入觀點，全面了解 AI 驅動的 IT 維運。"
+    },
+    "insights": {
+      "title": "精選觀點",
+      "items": [
+        { "title": "什麼是 AI-First IT Operations？", "category": "觀點", "readTime": "8 分鐘閱讀" },
+        { "title": "AI Agent 如何改變 IT 維運流程", "category": "技術深度", "readTime": "12 分鐘閱讀" },
+        { "title": "為什麼企業需要可治理的自動化平台", "category": "產業趨勢", "readTime": "6 分鐘閱讀" }
+      ]
+    },
+    "sections": [
+      { "title": "常見問題與解答", "description": "針對平台功能、部署方式與整合能力的詳細解答。" },
+      { "title": "型錄與白皮書下載", "description": "產品型錄、技術白皮書與架構設計文件。" },
+      { "title": "產品展示影片", "description": "觀看 Arova Nexus 各功能模組的實際操作演示。" },
+      { "title": "術語表與觀點", "description": "AI 維運相關的專業術語定義與深度觀點文章。" }
+    ],
+    "cta": {
+      "headline": "想深入了解 Arova Nexus？",
+      "button": "預約 Demo"
+    }
+  },
+  "about": {
+    "hero": {
+      "headline": "關於 Arova",
+      "subtitle": "我們致力於為企業打造下一代的智能 IT 維運基礎設施。"
+    },
+    "brandStory": {
+      "title": "我們為什麼做 Arova Nexus",
+      "content": "在多年服務企業 IT 團隊的過程中，我們深刻體會到傳統維運模式的局限：工具分散、流程斷裂、知識難以傳承。IT 團隊被困在重複性工作中，無法專注於真正有價值的策略性任務。\n\n我們創建 Arova Nexus，是為了從根本上改變這個局面。我們相信，AI 不應該只是一個附加功能，而應該成為 IT 維運的核心引擎。Arova Nexus 將 AI 理解力、自動化執行力和企業級治理融為一體，幫助團隊從被動救火轉變為主動預防，從手動操作轉變為智慧驅動。"
+    },
+    "missionVision": {
+      "title": "願景與使命",
+      "mission": {
+        "label": "使命",
+        "text": "協助企業打造更快、更穩、更可控的 IT 維運模式。"
+      },
+      "vision": {
+        "label": "願景",
+        "text": "成為企業 AI 驅動 IT 維運轉型的重要平台基礎。"
+      }
+    },
+    "security": {
+      "title": "安全與隱私承諾",
+      "content": "Arova Nexus 採用 Secure-by-design 的設計理念，從架構層面確保企業資料的安全。支援完全的地端部署，資料不離開客戶的網路邊界。所有操作均產生不可篡改的稽核日誌，滿足最嚴格的企業合規要求。"
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "businessEmail": "business@arova.io",
+      "supportEmail": "support@arova.io",
+      "address": "台北市信義區信義路五段 7 號 89 樓"
+    }
+  },
+  "experthub": {
+    "hero": {
+      "headline": "ASUS ExpertHub",
+      "subtitle": "透過 ASUS ExpertHub 探索 Arova Nexus 解決方案與企業資源。"
+    },
+    "marketplace": {
+      "title": "解決方案市集",
+      "description": "Arova Nexus 已上架 ASUS ExpertHub 解決方案市集。企業可以透過 ExpertHub 平台快速了解、評估與採購 Arova Nexus，享受 ASUS 企業級的技術支援與服務保障。",
+      "items": [
+        "一站式企業解決方案採購",
+        "ASUS 企業級技術支援",
+        "快速評估與 PoC 支援"
+      ]
+    },
+    "documents": {
+      "title": "相關文件與資源",
+      "description": "下載 Arova Nexus 的產品文件、整合指南與技術白皮書。",
+      "items": [
+        { "title": "Arova Nexus 產品簡介", "type": "PDF" },
+        { "title": "平台架構技術白皮書", "type": "PDF" },
+        { "title": "企業整合指南", "type": "PDF" }
+      ]
+    },
+    "cta": {
+      "headline": "在 ASUS ExpertHub 上探索 Arova Nexus",
+      "button": "前往 ExpertHub"
+    }
+  },
+  "contact": {
+    "hero": {
+      "headline": "預約 Demo / 聯絡我們",
+      "subtitle": "無論您想了解平台功能、討論部署選項，或是評估 Arova Nexus 如何融入您的 IT 環境，我們的團隊都準備好與您交流。"
+    },
+    "form": {
+      "title": "讓我們更了解你的需求",
+      "fields": {
+        "name": { "label": "姓名", "placeholder": "請輸入您的姓名" },
+        "company": { "label": "公司名稱", "placeholder": "請輸入公司名稱" },
+        "jobTitle": { "label": "職稱", "placeholder": "請輸入您的職稱" },
+        "email": { "label": "公司信箱", "placeholder": "name@company.com" },
+        "phone": { "label": "聯絡電話", "placeholder": "請輸入聯絡電話" },
+        "challenge": { "label": "想解決的問題", "placeholder": "請描述您目前在 IT 維運中遇到的主要挑戰..." },
+        "deploymentType": {
+          "label": "部署型態",
+          "placeholder": "請選擇偏好的部署方式",
+          "options": ["SaaS (雲端託管)", "VPC 私有雲部署", "On-Premises 完全地端部署", "尚未決定/需評估"]
+        },
+        "timeline": {
+          "label": "預計時程",
+          "placeholder": "請選擇預計時程",
+          "options": ["立即 (1-3 個月)", "短期 (3-6 個月)", "長期 (半年後)", "僅作初步評估與研究"]
+        }
+      },
+      "submit": "送出需求",
+      "bookDemo": "預約 Demo",
+      "successMessage": "提交後，我們將盡快與你聯繫。"
+    },
+    "sideContent": [
+      {
+        "title": "為什麼聯絡 Arova",
+        "description": "我們提供免費的 AI 自動化評估，幫助您了解 Arova Nexus 如何為您的團隊創造價值。"
+      },
+      {
+        "title": "適合討論的主題",
+        "description": "ITSM 整合策略、合規自動化、AI Agent 應用場景、PoC 規劃等。"
+      },
+      {
+        "title": "預期可獲得什麼",
+        "description": "完整的平台架構導覽、針對您場景的解決方案建議、以及完整的產品展示。"
+      }
+    ]
+  },
+  "footer": {
+    "vision": "成為企業 AI 驅動 IT 維運轉型的重要平台基礎。",
+    "product": {
+      "title": "產品",
+      "links": [
+        { "label": "平台", "href": "/platform" },
+        { "label": "平台能力", "href": "/capabilities" },
+        { "label": "解決方案", "href": "/solutions" }
+      ]
+    },
+    "company": {
+      "title": "公司",
+      "links": [
+        { "label": "關於我們", "href": "/about" },
+        { "label": "成功案例", "href": "/case-studies" },
+        { "label": "預約 Demo", "href": "/contact" }
+      ]
+    },
+    "contactTitle": "聯絡方式",
+    "copyright": "© 2026 Arova. All rights reserved.",
+    "privacy": "隱私政策",
+    "terms": "服務條款"
+  }
+}

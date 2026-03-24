@@ -1,0 +1,24 @@
+---
+interface Props {
+  headline: string;
+  subtitle?: string;
+  class?: string;
+}
+
+const { headline, subtitle, class: className = '' } = Astro.props;
+---
+
+<section class={`relative py-16 lg:py-24 overflow-hidden ${className}`}>
+  <!-- Background glow -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold text-foreground mb-6">{headline}</h1>
+      {subtitle && (
+        <p class="text-lg text-muted-foreground leading-relaxed">{subtitle}</p>
+      )}
+      <slot />
+    </div>
+  </div>
+</section>

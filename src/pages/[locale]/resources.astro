@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Card from '../../components/ui/Card.astro';
+import { locales, getTranslation, getLocalePath } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getTranslation(locale);
+---
+
+<BaseLayout title={t.meta.resources.title} description={t.meta.resources.description} locale={locale} currentPath="/resources">
+  <PageLayout locale={locale} currentPath="/resources">
+
+    <HeroSection headline={t.resources.hero.headline} subtitle={t.resources.hero.subtitle} />
+
+    <!-- Featured Insights -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.resources.insights.title} />
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {t.resources.insights.items.map((item) => (
+            <Card class="cursor-pointer group">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary">{item.category}</span>
+                <span class="text-xs text-muted-foreground">{item.readTime}</span>
+              </div>
+              <h3 class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Resource Sub-sections -->
+    <section class="py-20 bg-surface-panel border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 gap-6">
+          {t.resources.sections.map((section) => (
+            <div class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary/20 transition-colors">
+              <h3 class="text-lg font-semibold text-foreground mb-2">{section.title}</h3>
+              <p class="text-sm text-muted-foreground">{section.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      headline={t.resources.cta.headline}
+      primaryLabel={t.resources.cta.button}
+      primaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

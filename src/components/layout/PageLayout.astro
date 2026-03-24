@@ -1,0 +1,18 @@
+---
+import type { Locale } from '../../i18n/utils';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  locale: Locale;
+  currentPath?: string;
+}
+
+const { locale, currentPath = '' } = Astro.props;
+---
+
+<Navbar locale={locale} currentPath={currentPath} />
+<main class="pt-24">
+  <slot />
+</main>
+<Footer locale={locale} />

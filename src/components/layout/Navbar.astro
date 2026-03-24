@@ -1,0 +1,93 @@
+---
+import type { Locale } from '../../i18n/utils';
+import { getTranslation, getAlternateLocale, getLocalePath } from '../../i18n/utils';
+import MobileMenu from './MobileMenu.tsx';
+
+interface Props {
+  locale: Locale;
+  currentPath?: string;
+}
+
+const { locale, currentPath = '' } = Astro.props;
+const t = getTranslation(locale);
+const altLocale = getAlternateLocale(locale);
+
+const navLinks = [
+  { label: t.nav.platform, href: getLocalePath(locale, '/platform') },
+  { label: t.nav.solutions, href: getLocalePath(locale, '/solutions') },
+  { label: t.nav.capabilities, href: getLocalePath(locale, '/capabilities') },
+  { label: t.nav.caseStudies, href: getLocalePath(locale, '/case-studies') },
+  { label: t.nav.resources, href: getLocalePath(locale, '/resources') },
+  { label: t.nav.about, href: getLocalePath(locale, '/about') },
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <!-- Logo -->
+    <a href={getLocalePath(locale)} class="flex items-center gap-2.5 group">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg">
+        A
+      </div>
+      <span class="text-xl font-semibold text-foreground">Arova</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden lg:flex items-center gap-1">
+      {navLinks.map((link) => (
+        <a href={link.href} class="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5">
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Right section -->
+    <div class="flex items-center gap-3">
+      <!-- Language Switcher -->
+      <a
+        href={`/${altLocale}${currentPath}`}
+        class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        {t.nav.langSwitch}
+      </a>
+
+      <!-- CTA -->
+      <a
+        href={getLocalePath(locale, '/contact')}
+        class="hidden lg:inline-flex items-center px-5 py-2 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary/90 transition-colors glow-cyan"
+      >
+        {t.nav.bookDemo}
+      </a>
+
+      <!-- Mobile Menu (React Island) -->
+      <div class="lg:hidden">
+        <MobileMenu
+          client:load
+          locale={locale}
+          currentPath={currentPath}
+          navLinks={navLinks}
+          langSwitchLabel={t.nav.langSwitch}
+          altLocale={altLocale}
+          bookDemoLabel={t.nav.bookDemo}
+        />
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (!navbar) return;
+    if (window.scrollY > 20) {
+      navbar.classList.add('bg-background/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      navbar.classList.remove('py-5');
+      navbar.classList.add('py-3');
+    } else {
+      navbar.classList.remove('bg-background/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+      navbar.classList.remove('py-3');
+      navbar.classList.add('py-5');
+    }
+  });
+</script>

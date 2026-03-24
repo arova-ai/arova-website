@@ -1,0 +1,31 @@
+---
+interface Props {
+  index: number;
+}
+
+const { index } = Astro.props;
+
+const visuals = [
+  { icon: '🤖', nodes: ['Monitor', 'Detect', 'Resolve', 'Report'], color: 'primary' },
+  { icon: '🚀', nodes: ['Plan', 'Review', 'Deploy', 'Verify'], color: 'accent' },
+  { icon: '🔍', nodes: ['Alert', 'Analyze', 'Correlate', 'Fix'], color: 'amber-400' },
+  { icon: '🔐', nodes: ['Request', 'Verify', 'Grant', 'Audit'], color: 'emerald-400' },
+  { icon: '🔗', nodes: ['Connect', 'Sync', 'Automate', 'Track'], color: 'blue-400' },
+];
+
+const visual = visuals[index] || visuals[0];
+---
+
+<div class="relative p-8 rounded-2xl glass-card">
+  <div class="text-center mb-6">
+    <span class="text-4xl">{visual.icon}</span>
+  </div>
+  <div class="grid grid-cols-2 gap-3">
+    {visual.nodes.map((node, i) => (
+      <div class="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/10 bg-white/5">
+        <div class={`w-2 h-2 rounded-full bg-${visual.color}`} />
+        <span class="text-xs text-muted-foreground">{node}</span>
+      </div>
+    ))}
+  </div>
+</div>

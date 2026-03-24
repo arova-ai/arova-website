@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Card from '../../components/ui/Card.astro';
+import { locales, getTranslation, getLocalePath } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getTranslation(locale);
+---
+
+<BaseLayout title={t.meta.capabilities.title} description={t.meta.capabilities.description} locale={locale} currentPath="/capabilities">
+  <PageLayout locale={locale} currentPath="/capabilities">
+
+    <HeroSection headline={t.capabilities.hero.headline} subtitle={t.capabilities.hero.subtitle} />
+
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.capabilities.intro.title} />
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {t.capabilities.items.map((cap) => (
+            <Card class="flex flex-col">
+              <h3 class="text-xl font-semibold text-foreground mb-3">{cap.title}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{cap.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {cap.highlights.map((h) => (
+                  <span class="px-2.5 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">{h}</span>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      headline={t.capabilities.cta.headline}
+      primaryLabel={t.capabilities.cta.button}
+      primaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

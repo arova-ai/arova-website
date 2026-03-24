@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import SolutionVisual from '../../components/visuals/SolutionVisual.astro';
+import { locales, getTranslation, getLocalePath } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getTranslation(locale);
+---
+
+<BaseLayout title={t.meta.solutions.title} description={t.meta.solutions.description} locale={locale} currentPath="/solutions">
+  <PageLayout locale={locale} currentPath="/solutions">
+
+    <!-- Hero -->
+    <HeroSection headline={t.solutions.hero.headline} subtitle={t.solutions.hero.subtitle} />
+
+    <!-- Solution Sections -->
+    {t.solutions.items.map((solution, i) => (
+      <section class={`py-20 ${i % 2 === 0 ? '' : 'bg-surface-panel border-y border-white/5'}`}>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <div class={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <h2 class="text-2xl sm:text-3xl font-bold text-foreground mb-4">{solution.title}</h2>
+              <p class="text-destructive text-sm font-medium mb-4">{solution.pain}</p>
+              <p class="text-muted-foreground mb-6 leading-relaxed">{solution.help}</p>
+              <ul class="space-y-3">
+                {solution.outcomes.map((outcome) => (
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400 shrink-0 mt-0.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span class="text-sm text-foreground">{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class={i % 2 === 1 ? 'lg:order-1' : ''}>
+              <SolutionVisual index={i} />
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- Summary -->
+    <section class="py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-foreground">{t.solutions.summary.headline}</h2>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <CTASection
+      headline={t.solutions.cta.headline}
+      primaryLabel={t.solutions.cta.ctaPrimary}
+      primaryHref={getLocalePath(locale, '/contact')}
+      secondaryLabel={t.solutions.cta.ctaSecondary}
+      secondaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

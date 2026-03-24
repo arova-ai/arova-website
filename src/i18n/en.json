@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "home": { "title": "Arova Nexus — AI-First IT Operations Platform", "description": "Arova Nexus, developed by Arova, is an AI-First IT Operations Platform that helps enterprises transform IT operations." },
+    "platform": { "title": "Platform — Arova Nexus", "description": "Learn how Arova Nexus combines AI agents, automation, integration, and governance into one unified platform." },
+    "solutions": { "title": "Solutions — Arova Nexus", "description": "Explore solutions designed for modern enterprise IT operations scenarios." },
+    "capabilities": { "title": "Capabilities — Arova Nexus", "description": "From AI agents to observability, explore the modular platform capabilities of Arova Nexus." },
+    "caseStudies": { "title": "Case Studies — Arova Nexus", "description": "See how leading enterprises transform their IT operations with Arova Nexus." },
+    "resources": { "title": "Resources — Arova Nexus", "description": "Explore whitepapers, architecture guides, and insights on AI-driven IT operations." },
+    "about": { "title": "About Arova", "description": "Learn about Arova's mission, vision, and why we built Arova Nexus." },
+    "experthub": { "title": "ASUS ExpertHub — Arova Nexus", "description": "Access Arova Nexus solutions and resources through ASUS ExpertHub." },
+    "contact": { "title": "Book a Demo / Contact Us — Arova Nexus", "description": "Book a product demo or contact the Arova team to discuss your IT operations needs." }
+  },
+  "nav": {
+    "home": "Home",
+    "platform": "Platform",
+    "solutions": "Solutions",
+    "capabilities": "Capabilities",
+    "caseStudies": "Case Studies",
+    "resources": "Resources",
+    "about": "About",
+    "experthub": "ASUS ExpertHub",
+    "bookDemo": "Book a Demo",
+    "langSwitch": "繁中"
+  },
+  "home": {
+    "hero": {
+      "badge": "Enterprise AI-First Platform",
+      "headline": "Arova Nexus",
+      "tagline": "Let AI accelerate your IT operations",
+      "subtitle": "Arova Nexus, developed by Arova, is an AI-First IT Operations Platform that helps enterprises transform IT operations from manual workflows into AI-driven automation, governed execution, and semi-autonomous operations.",
+      "ctaPrimary": "Explore Platform",
+      "ctaSecondary": "Book a Demo"
+    },
+    "coreValue": {
+      "title": "Built for faster, safer, and more controllable IT operations",
+      "cards": [
+        { "icon": "zap", "title": "Faster", "description": "Automate tedious tasks and reduce resolution time from hours to minutes.", "color": "amber" },
+        { "icon": "shield", "title": "Safer", "description": "AI-assisted root cause analysis reduces human error and improves system availability.", "color": "emerald" },
+        { "icon": "sliders", "title": "Greater Control", "description": "Built-in review mechanisms and complete audit trails ensure every change is governed.", "color": "primary" }
+      ]
+    },
+    "painPoints": {
+      "title": "Are you facing these operational challenges?",
+      "items": [
+        { "title": "Time-consuming repetitive tickets", "description": "IT staff spend hours daily processing low-value tickets like password resets and access requests." },
+        { "title": "Fragmented cross-system operations", "description": "Switching between multiple monitoring, alerting, and deployment tools breaks workflow continuity." },
+        { "title": "Lack of clear audit trails", "description": "Manual operations are hard to track and fail to meet enterprise compliance and audit requirements." },
+        { "title": "Difficult knowledge transfer", "description": "Senior staff's troubleshooting expertise is hard to systematize, leaving new hires with steep learning curves." },
+        { "title": "High automation script maintenance cost", "description": "Scattered automation scripts lack unified management and become technical debt." }
+      ]
+    },
+    "platformOverview": {
+      "title": "A platform built for AI-driven enterprise IT operations",
+      "subtitle": "Arova Nexus combines AI agents, workflow automation, system integration, governance controls, and operational visibility into one unified platform.",
+      "exploreLink": "Explore Architecture"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        { "number": "1", "title": "Sense & Integrate", "description": "Connect with existing monitoring, ticketing, and infrastructure" },
+        { "number": "2", "title": "Understand & Analyze", "description": "AI Agent parses intent and system state" },
+        { "number": "3", "title": "Decide & Plan", "description": "Generate execution plans and automated workflows" },
+        { "number": "4", "title": "Execute with Control", "description": "Operate safely according to governance policies" },
+        { "number": "5", "title": "Monitor & Improve", "description": "Complete auditing and AI model iteration" }
+      ]
+    },
+    "solutionsPreview": {
+      "title": "Designed for real enterprise IT scenarios",
+      "items": [
+        "AI-Driven IT Operations",
+        "Smart Deployment & Change Governance",
+        "Incident Investigation & Root Cause Analysis",
+        "Compliance & Access Control",
+        "Enterprise Workflow Integration"
+      ]
+    },
+    "trust": {
+      "title": "Built for enterprise environments",
+      "items": [
+        "On-prem ready architecture",
+        "Governance-first operational design",
+        "Complete audit trails and execution transparency",
+        "Enterprise integration flexibility",
+        "Secure-by-design architecture"
+      ]
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": [
+        { "question": "What is Arova Nexus?", "answer": "Arova Nexus is an AI-First IT operations platform that combines AI agents, an automation engine, and enterprise governance to help IT teams manage infrastructure and operations tasks more efficiently." },
+        { "question": "Who is it for?", "answer": "Primarily designed for IT operations, SRE (Site Reliability Engineering), DevOps, and cloud management teams in medium to large enterprises." },
+        { "question": "Does it support on-prem deployment?", "answer": "Yes, Arova Nexus supports full on-premises deployment or private cloud deployment within a VPC, ensuring absolute data security and compliance." },
+        { "question": "What systems can it integrate with?", "answer": "Supports integration with common ITSM tools (Jira, ServiceNow), monitoring tools (Datadog, Prometheus), communication platforms (Slack, Teams), and major cloud platforms." }
+      ]
+    },
+    "cta": {
+      "headline": "Ready to bring AI into your IT operations?",
+      "button": "Contact Sales"
+    }
+  },
+  "platform": {
+    "hero": {
+      "headline": "A platform built for AI-driven enterprise IT operations",
+      "subtitle": "Arova Nexus combines AI agents, workflow automation, system integration, governance controls, and operational visibility into one unified platform for modern IT teams."
+    },
+    "whatIs": {
+      "title": "What is Arova Nexus?",
+      "description": "Unlike single-purpose automation tools, Arova Nexus is a native AI-First platform. It goes beyond script execution — it's an intelligent hub capable of understanding context, making decisions, and acting within enterprise safety guardrails.",
+      "whyTitle": "Why enterprise IT needs a new operational model",
+      "whyPoints": [
+        "Reduce operational friction and manual repetition",
+        "Improve execution consistency and predictability",
+        "Strengthen governance review and change control",
+        "Increase visibility across actions and outcomes",
+        "Support scale without proportional headcount increase"
+      ]
+    },
+    "architecture": {
+      "title": "Platform architecture overview",
+      "layers": [
+        { "name": "Experience Layer", "description": "Natural language interface for conversational operations" },
+        { "name": "AI Agent Layer", "description": "Domain-specific AI agents that understand intent and plan tasks" },
+        { "name": "Automation Engine", "description": "Workflow orchestration and automated execution engine" },
+        { "name": "Integration Hub", "description": "API and plugin ecosystem connecting enterprise systems" },
+        { "name": "Governance & Guardrails", "description": "RBAC, approval workflows, and safety guardrail mechanisms" },
+        { "name": "Observability & Data Intelligence", "description": "Log analytics, resource topology, and execution intelligence" }
+      ]
+    },
+    "deployment": {
+      "title": "Designed for control, flexibility, and enterprise readiness",
+      "items": [
+        { "title": "On-prem ready architecture", "description": "Full control over data and execution environment" },
+        { "title": "Role-based operational control", "description": "Fine-grained access control and operational permissions" },
+        { "title": "Approval-aware workflow design", "description": "Built-in multi-level approval and automated escalation" },
+        { "title": "Audit logging and traceability", "description": "Complete operation records meeting compliance requirements" },
+        { "title": "Integration-ready enterprise model", "description": "Flexible integration with enterprise systems and services" }
+      ]
+    },
+    "cta": {
+      "headline": "See how Arova Nexus fits your operational environment",
+      "ctaPrimary": "Book a Demo",
+      "ctaSecondary": "Talk to Our Team"
+    }
+  },
+  "solutions": {
+    "hero": {
+      "headline": "Solutions for modern enterprise IT operations",
+      "subtitle": "Explore how Arova Nexus helps teams operate with more speed, consistency, and control, addressing key IT operations pain points."
+    },
+    "items": [
+      {
+        "title": "AI-Driven IT Operations",
+        "pain": "IT teams are overwhelmed by repetitive tickets daily, unable to focus on high-value tasks.",
+        "help": "Arova Nexus uses AI agents to automatically handle L1-level daily tickets such as password resets and access changes. After understanding request intent, it completes operations within governance guardrails with full audit records.",
+        "outcomes": ["40% increase in L1 ticket auto-resolution", "IT staff freed for strategic tasks", "Complete audit trail for every operation"]
+      },
+      {
+        "title": "Smart Deployment & Change Governance",
+        "pain": "Manual deployment processes are cumbersome, error-prone, and lack standardized change controls.",
+        "help": "Arova Nexus provides automated deployment workflows with built-in pre-checks, multi-level approvals, and rollback mechanisms. Every change follows a standardized process ensuring consistency and safety.",
+        "outcomes": ["60% reduction in change lead time", "Near-zero configuration error rate", "Standardized deployment eliminating human oversights"]
+      },
+      {
+        "title": "Incident Investigation & Root Cause Analysis",
+        "pain": "When system anomalies occur, manual investigation across multiple tools is time-consuming and labor-intensive.",
+        "help": "Arova Nexus AI agents automatically aggregate cross-system logs and metrics, perform intelligent correlation analysis, quickly identify root causes, and provide recommended remediation plans.",
+        "outcomes": ["50% reduction in MTTR", "AI-driven auto-correlation and recommendations", "Continuous organizational troubleshooting knowledge base"]
+      },
+      {
+        "title": "Compliance & Access Control",
+        "pain": "Scattered permissions management makes it difficult to meet strict compliance audit requirements.",
+        "help": "Arova Nexus provides Just-in-Time (JIT) access control combined with automated compliance report generation, ensuring every access action is traceable and auditable.",
+        "outcomes": ["JIT access control eliminating idle privileges", "Automated compliance report generation", "Meeting financial and manufacturing audit requirements"]
+      },
+      {
+        "title": "Enterprise Workflow Integration",
+        "pain": "Fragmented internal tools make it difficult to automate end-to-end IT processes.",
+        "help": "Arova Nexus serves as a unified integration hub, using 50+ connectors and custom Webhook/APIs to break down system silos and enable cross-tool end-to-end automation.",
+        "outcomes": ["Breaking tool silos with unified operations portal", "Cross-system automated workflows", "Significantly reduced new system integration time"]
+      }
+    ],
+    "summary": {
+      "headline": "Arova Nexus helps teams operate with more speed, more consistency, and more control"
+    },
+    "cta": {
+      "headline": "Explore how Arova Nexus supports your operational priorities",
+      "ctaPrimary": "Book a Demo",
+      "ctaSecondary": "Contact Sales"
+    }
+  },
+  "capabilities": {
+    "hero": {
+      "headline": "Arova Nexus Capabilities",
+      "subtitle": "From AI agents and workflow automation to integration, governance, observability, and analytics, Arova Nexus provides the core platform capabilities needed for modern enterprise IT operations."
+    },
+    "intro": {
+      "title": "Core capabilities for enterprise IT operations"
+    },
+    "items": [
+      {
+        "title": "AI Agent",
+        "description": "Understands user intent through natural language, dynamically plans and executes cross-system tasks. The AI Agent has contextual memory for continuous learning and optimization.",
+        "highlights": ["NLP Semantic Parsing", "Dynamic Task Planning", "Context Memory"]
+      },
+      {
+        "title": "Workflow Automation",
+        "description": "Visual low-code workflow editor supporting state machines, conditional branching, and parallel execution, making complex IT process automation simple.",
+        "highlights": ["Low-code Drag & Drop", "State Machine Engine", "Parallel Task Execution"]
+      },
+      {
+        "title": "Integration Hub",
+        "description": "50+ enterprise-grade connectors with custom Webhook and API integration support, enabling bidirectional data synchronization and system integration.",
+        "highlights": ["50+ Connectors", "Custom Webhook/API", "Bidirectional Sync"]
+      },
+      {
+        "title": "Governance & Guardrails",
+        "description": "Fine-grained RBAC permission controls, multi-level approval workflows, pre-execution safety checks ensuring every operation stays within governance frameworks.",
+        "highlights": ["Fine-grained RBAC", "Multi-level Approvals", "Pre-execution Protection"]
+      },
+      {
+        "title": "Observability",
+        "description": "Real-time log streaming, resource topology visualization, and system bottleneck analysis providing IT teams with comprehensive operational visibility.",
+        "highlights": ["Real-time Log Monitoring", "Resource Topology Visualization", "Intelligent Bottleneck Analysis"]
+      },
+      {
+        "title": "Analytics & Reporting",
+        "description": "Automated ROI dashboards, SLA achievement analysis, and custom audit reports driving data-informed operations decisions and continuous improvement.",
+        "highlights": ["ROI Dashboard", "SLA Analysis", "Custom Audit Reports"]
+      }
+    ],
+    "cta": {
+      "headline": "Explore how Arova Nexus can enhance your IT operations capabilities",
+      "button": "Book a Demo"
+    }
+  },
+  "caseStudies": {
+    "hero": {
+      "headline": "Case Studies & Use Scenarios",
+      "subtitle": "See how leading enterprises are leveraging Arova Nexus to transform their IT operations."
+    },
+    "items": [
+      {
+        "title": "Deployment Governance for a Large Financial Enterprise",
+        "background": "A large financial institution with thousands of employees whose IT team processes dozens of application deployments weekly. Traditional manual deployment processes frequently caused service outages due to configuration errors.",
+        "challenge": "Manual deployment processes averaged 3 days, with a 15% configuration error rate. Lacking standardized change approval mechanisms, they couldn't meet financial regulatory compliance requirements.",
+        "implementation": "Deployed Arova Nexus automated deployment workflows with standardized pre-checks and multi-level approval mechanisms, integrated with the existing CI/CD toolchain.",
+        "outcomes": ["Deployment time reduced from 3 days to 2 hours", "Configuration error rate dropped to 0%", "Successfully passed annual financial IT audit"]
+      },
+      {
+        "title": "Faster Incident Investigation for a Major E-commerce Platform",
+        "background": "An e-commerce platform with over a million daily active users whose SRE team frequently faces large-scale system anomaly events, requiring manual investigation across multiple monitoring systems.",
+        "challenge": "Average MTTR exceeded 4 hours, SRE on-call pressure was extreme, and troubleshooting experience from each incident couldn't be effectively transferred.",
+        "implementation": "Deployed Arova Nexus AI-driven incident investigation module, automatically aggregating Datadog, Prometheus, and application logs for intelligent correlation analysis.",
+        "outcomes": ["45% reduction in MTTR", "Significant decrease in SRE on-call pressure", "Built organizational troubleshooting knowledge base"]
+      },
+      {
+        "title": "Tool Integration & Automation for a Global Manufacturer",
+        "background": "A globally recognized manufacturing enterprise with IT infrastructure spanning multiple countries, using over 20 different IT management tools.",
+        "challenge": "Severe tool silos existed, with L1 permission request tickets consuming 60% of IT service desk workload. New employee IT environment preparation took over a week.",
+        "implementation": "Used Arova Nexus as the unified integration hub, connecting ServiceNow, Active Directory, Azure AD, and other core systems to build cross-tool automated workflows.",
+        "outcomes": ["Eliminated 80% of L1 permission request tickets", "Achieved cross-system automated workflows", "100% Day-1 IT readiness for new employees"]
+      }
+    ],
+    "cta": {
+      "headline": "Want to see how Arova Nexus can help your team?",
+      "button": "Book a Demo"
+    }
+  },
+  "resources": {
+    "hero": {
+      "headline": "Resources",
+      "subtitle": "Explore whitepapers, architecture guides, and deep insights to fully understand AI-driven IT operations."
+    },
+    "insights": {
+      "title": "Featured Insights",
+      "items": [
+        { "title": "What is AI-First IT Operations?", "category": "Insights", "readTime": "8 min read" },
+        { "title": "How AI Agents are Changing IT Operations", "category": "Technical Deep Dive", "readTime": "12 min read" },
+        { "title": "Why Enterprises Need a Governable Automation Platform", "category": "Industry Trends", "readTime": "6 min read" }
+      ]
+    },
+    "sections": [
+      { "title": "FAQ & Answers", "description": "Detailed answers about platform features, deployment options, and integration capabilities." },
+      { "title": "Catalogs & Whitepapers", "description": "Product catalogs, technical whitepapers, and architecture design documents." },
+      { "title": "Product Demos", "description": "Watch live demonstrations of Arova Nexus feature modules in action." },
+      { "title": "Glossary & Perspectives", "description": "Definitions of AI operations terminology and in-depth perspective articles." }
+    ],
+    "cta": {
+      "headline": "Want to learn more about Arova Nexus?",
+      "button": "Book a Demo"
+    }
+  },
+  "about": {
+    "hero": {
+      "headline": "About Arova",
+      "subtitle": "We are dedicated to building the next generation of intelligent IT operations infrastructure for enterprises."
+    },
+    "brandStory": {
+      "title": "Why we built Arova Nexus",
+      "content": "Through years of serving enterprise IT teams, we've deeply experienced the limitations of traditional operations: fragmented tools, broken processes, and knowledge that's nearly impossible to transfer. IT teams are trapped in repetitive work, unable to focus on truly valuable strategic tasks.\n\nWe created Arova Nexus to fundamentally change this landscape. We believe AI shouldn't just be an add-on feature — it should be the core engine of IT operations. Arova Nexus integrates AI understanding, automated execution, and enterprise-grade governance into one platform, helping teams transform from reactive firefighting to proactive prevention, from manual operations to intelligence-driven workflows."
+    },
+    "missionVision": {
+      "title": "Mission & Vision",
+      "mission": {
+        "label": "Mission",
+        "text": "Help enterprises build IT operations that are faster, safer, and more controllable."
+      },
+      "vision": {
+        "label": "Vision",
+        "text": "Become a foundational platform for AI-driven enterprise IT operations transformation."
+      }
+    },
+    "security": {
+      "title": "Security & Privacy Commitment",
+      "content": "Arova Nexus is built on a Secure-by-design philosophy, ensuring enterprise data security from the architecture level. It supports full on-premises deployment, keeping data within the customer's network boundary. All operations produce immutable audit logs, meeting the strictest enterprise compliance requirements."
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "businessEmail": "business@arova.io",
+      "supportEmail": "support@arova.io",
+      "address": "89F, No. 7, Sec. 5, Xinyi Rd., Xinyi Dist., Taipei City"
+    }
+  },
+  "experthub": {
+    "hero": {
+      "headline": "ASUS ExpertHub",
+      "subtitle": "Explore Arova Nexus solutions and enterprise resources through ASUS ExpertHub."
+    },
+    "marketplace": {
+      "title": "Solution Marketplace",
+      "description": "Arova Nexus is available on the ASUS ExpertHub solution marketplace. Enterprises can quickly explore, evaluate, and procure Arova Nexus through ExpertHub, backed by ASUS enterprise-grade technical support and service guarantees.",
+      "items": [
+        "One-stop enterprise solution procurement",
+        "ASUS enterprise-grade technical support",
+        "Rapid evaluation and PoC support"
+      ]
+    },
+    "documents": {
+      "title": "Documents & Resources",
+      "description": "Download Arova Nexus product documentation, integration guides, and technical whitepapers.",
+      "items": [
+        { "title": "Arova Nexus Product Brief", "type": "PDF" },
+        { "title": "Platform Architecture Whitepaper", "type": "PDF" },
+        { "title": "Enterprise Integration Guide", "type": "PDF" }
+      ]
+    },
+    "cta": {
+      "headline": "Explore Arova Nexus on ASUS ExpertHub",
+      "button": "Visit ExpertHub"
+    }
+  },
+  "contact": {
+    "hero": {
+      "headline": "Book a Demo / Contact Us",
+      "subtitle": "Whether you want to learn about platform capabilities, discuss deployment options, or evaluate how Arova Nexus fits into your IT environment, our team is ready to connect."
+    },
+    "form": {
+      "title": "Help us understand your needs",
+      "fields": {
+        "name": { "label": "Name", "placeholder": "Enter your name" },
+        "company": { "label": "Company", "placeholder": "Enter your company name" },
+        "jobTitle": { "label": "Job Title", "placeholder": "Enter your job title" },
+        "email": { "label": "Work Email", "placeholder": "name@company.com" },
+        "phone": { "label": "Phone", "placeholder": "Enter your phone number" },
+        "challenge": { "label": "Challenge", "placeholder": "Describe the main challenges you're facing in IT operations..." },
+        "deploymentType": {
+          "label": "Deployment Type",
+          "placeholder": "Select preferred deployment method",
+          "options": ["SaaS (Cloud-hosted)", "VPC Private Cloud", "On-Premises (Fully self-hosted)", "Undecided / Need evaluation"]
+        },
+        "timeline": {
+          "label": "Timeline",
+          "placeholder": "Select expected timeline",
+          "options": ["Immediate (1-3 months)", "Short-term (3-6 months)", "Long-term (6+ months)", "Research & evaluation only"]
+        }
+      },
+      "submit": "Submit Inquiry",
+      "bookDemo": "Book a Demo",
+      "successMessage": "Our team will get back to you as soon as possible after submission."
+    },
+    "sideContent": [
+      {
+        "title": "Why talk to Arova",
+        "description": "We offer a free AI automation assessment to help you understand how Arova Nexus can create value for your team."
+      },
+      {
+        "title": "What we can discuss",
+        "description": "ITSM integration strategies, compliance automation, AI Agent use cases, PoC planning, and more."
+      },
+      {
+        "title": "What you can expect",
+        "description": "A complete platform architecture walkthrough, solution recommendations tailored to your scenarios, and a full product demonstration."
+      }
+    ]
+  },
+  "footer": {
+    "vision": "Become a foundational platform for AI-driven enterprise IT operations transformation.",
+    "product": {
+      "title": "Product",
+      "links": [
+        { "label": "Platform", "href": "/platform" },
+        { "label": "Capabilities", "href": "/capabilities" },
+        { "label": "Solutions", "href": "/solutions" }
+      ]
+    },
+    "company": {
+      "title": "Company",
+      "links": [
+        { "label": "About", "href": "/about" },
+        { "label": "Case Studies", "href": "/case-studies" },
+        { "label": "Book a Demo", "href": "/contact" }
+      ]
+    },
+    "contactTitle": "Contact",
+    "copyright": "© 2026 Arova. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
