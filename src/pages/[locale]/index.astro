@@ -47,6 +47,17 @@ const t = getTranslation(locale);
               <Button href={getLocalePath(locale, '/platform')} variant="primary" size="lg">{t.home.hero.ctaPrimary}</Button>
               <Button href={getLocalePath(locale, '/contact')} variant="outline" size="lg">{t.home.hero.ctaSecondary}</Button>
             </div>
+            {/* Hero Metrics */}
+            {t.home.hero.metrics && (
+              <div class="mt-10 flex flex-wrap gap-6">
+                {t.home.hero.metrics.map((m: { label: string; value: string }) => (
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-2xl font-bold gradient-text">{m.value}</span>
+                    <span class="text-sm text-muted-foreground">{m.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <div class="hidden lg:block">
             <HeroNodeNetwork client:visible />

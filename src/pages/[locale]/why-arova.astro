@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageLayout from '../../components/layout/PageLayout.astro';
+import HeroSection from '../../components/sections/HeroSection.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import SectionTitle from '../../components/ui/SectionTitle.astro';
+import Card from '../../components/ui/Card.astro';
+import { locales, getTranslation, getLocalePath } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getTranslation(locale);
+---
+
+<BaseLayout title={t.meta.whyArova.title} description={t.meta.whyArova.description} locale={locale} currentPath="/why-arova">
+  <PageLayout locale={locale} currentPath="/why-arova">
+
+    <HeroSection headline={t.whyArova.hero.headline} subtitle={t.whyArova.hero.subtitle} />
+
+    <!-- Comparison Table -->
+    <section class="py-24">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.whyArova.comparison.title} />
+        <div class="space-y-6">
+          {t.whyArova.comparison.categories.map((cat) => (
+            <div class="glass-card p-6">
+              <h3 class="text-lg font-semibold text-foreground mb-4">{cat.name}</h3>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="p-4 rounded-lg bg-destructive/5 border border-destructive/20">
+                  <span class="text-xs font-medium text-destructive uppercase tracking-wider">{locale === 'zh-TW' ? '傳統方法' : 'Traditional'}</span>
+                  <p class="text-sm text-muted-foreground mt-2">{cat.traditional}</p>
+                </div>
+                <div class="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <span class="text-xs font-medium text-primary uppercase tracking-wider">Arova Nexus</span>
+                  <p class="text-sm text-foreground mt-2">{cat.arova}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Differentiators -->
+    <section class="py-20 bg-surface-panel border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.whyArova.differentiators.title} />
+        <div class="grid sm:grid-cols-2 gap-6">
+          {t.whyArova.differentiators.items.map((item) => (
+            <Card>
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="text-lg font-semibold text-foreground">{item.title}</h3>
+                <span class="px-2.5 py-0.5 text-xs rounded-full bg-primary/10 text-primary shrink-0 ml-3">{item.metric}</span>
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Persona Value -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title={t.whyArova.personas.title} />
+        <div class="grid sm:grid-cols-3 gap-6">
+          {t.whyArova.personas.items.map((p) => (
+            <a href={getLocalePath(locale, p.link)} class="glass-card p-6 hover:-translate-y-1 transition-transform duration-300 block group">
+              <div class="text-sm font-semibold text-primary mb-1">{p.role}</div>
+              <div class="text-xs text-accent mb-3">{p.focus}</div>
+              <p class="text-sm text-muted-foreground mb-4">{p.description}</p>
+              <span class="text-sm text-primary group-hover:underline flex items-center gap-1">
+                {locale === 'zh-TW' ? '了解更多' : 'Learn more'}
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      headline={t.whyArova.cta.headline}
+      primaryLabel={t.whyArova.cta.ctaPrimary}
+      primaryHref={getLocalePath(locale, '/contact')}
+      secondaryLabel={t.whyArova.cta.ctaSecondary}
+      secondaryHref={getLocalePath(locale, '/contact')}
+    />
+
+  </PageLayout>
+</BaseLayout>

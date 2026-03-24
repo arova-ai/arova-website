@@ -21,33 +21,43 @@ const t = getTranslation(locale);
 
     <HeroSection headline={t.resources.hero.headline} subtitle={t.resources.hero.subtitle} />
 
-    <!-- Featured Insights -->
+    <!-- Featured Content -->
     <section class="py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title={t.resources.insights.title} />
+        <SectionTitle title={t.resources.featured.title} />
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {t.resources.insights.items.map((item) => (
-            <Card class="cursor-pointer group">
+          {t.resources.featured.items.map((item) => (
+            <Card class="cursor-pointer group flex flex-col">
               <div class="flex items-center gap-2 mb-3">
                 <span class="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary">{item.category}</span>
                 <span class="text-xs text-muted-foreground">{item.readTime}</span>
+                {item.isGated && (
+                  <span class="px-2 py-0.5 text-xs rounded-full bg-accent/10 text-accent">
+                    {locale === 'zh-TW' ? '需填表下載' : 'Gated'}
+                  </span>
+                )}
               </div>
-              <h3 class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
+              <h3 class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">{item.title}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed flex-1">{item.description}</p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                {item.roles.map((role: string) => (
+                  <span class="text-xs text-muted-foreground bg-white/5 px-2 py-0.5 rounded">{role}</span>
+                ))}
+              </div>
             </Card>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- Resource Sub-sections -->
+    <!-- Glossary -->
     <section class="py-20 bg-surface-panel border-y border-white/5">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid sm:grid-cols-2 gap-6">
-          {t.resources.sections.map((section) => (
-            <div class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary/20 transition-colors">
-              <h3 class="text-lg font-semibold text-foreground mb-2">{section.title}</h3>
-              <p class="text-sm text-muted-foreground">{section.description}</p>
-            </div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-foreground mb-4 text-center">{t.resources.glossary.title}</h2>
+        <p class="text-muted-foreground text-center mb-8">{t.resources.glossary.description}</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          {(t.resources.glossary.sampleTerms ?? t.resources.glossary.items?.map((i: { term: string }) => i.term) ?? []).map((term: string) => (
+            <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-foreground hover:border-primary/30 hover:bg-primary/5 transition-colors cursor-pointer">{term}</span>
           ))}
         </div>
       </div>
@@ -55,8 +65,10 @@ const t = getTranslation(locale);
 
     <CTASection
       headline={t.resources.cta.headline}
-      primaryLabel={t.resources.cta.button}
+      primaryLabel={t.resources.cta.ctaPrimary}
       primaryHref={getLocalePath(locale, '/contact')}
+      secondaryLabel={t.resources.cta.ctaSecondary}
+      secondaryHref={getLocalePath(locale, '/contact')}
     />
 
   </PageLayout>

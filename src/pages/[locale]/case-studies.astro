@@ -23,12 +23,24 @@ const t = getTranslation(locale);
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {t.caseStudies.items.map((cs, i) => (
           <article class="glass-card p-8 sm:p-10">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold">
-                {i + 1}
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold">
+                  {i + 1}
+                </div>
+                <div>
+                  <h2 class="text-xl sm:text-2xl font-bold text-foreground">{cs.title}</h2>
+                  {cs.industry && <span class="text-xs text-accent">{cs.industry}</span>}
+                </div>
               </div>
-              <h2 class="text-xl sm:text-2xl font-bold text-foreground">{cs.title}</h2>
             </div>
+            {cs.metrics && (
+              <div class="flex flex-wrap gap-2 mb-6">
+                {cs.metrics.map((m: string) => (
+                  <span class="px-2.5 py-1 text-xs rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20">{m}</span>
+                ))}
+              </div>
+            )}
 
             <div class="space-y-6">
               <div>
