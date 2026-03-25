@@ -17,18 +17,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
       <!-- Brand -->
       <div class="lg:col-span-2">
-        <a href={getLocalePath(locale)} class="flex items-center mb-4">
-          <img src={`${base}/logo-horizontal@2x.png`} alt="Arova" class="h-7" />
+        <a href={getLocalePath(locale)} class="inline-block mb-8">
+          <img src={`${base}/logo-icon@2x.png`} alt="Arova" class="h-14 mb-4 opacity-90" />
+          <span class="block text-xl font-semibold tracking-[0.15em] text-foreground/80" style="font-family: 'Sora', sans-serif;">AROVA</span>
         </a>
-        <p class="text-sm text-muted-foreground leading-relaxed max-w-sm mb-6">
+        <p class="text-sm text-muted-foreground/70 leading-relaxed max-w-xs mb-8">
           {t.footer.vision}
         </p>
-        <div class="flex items-center gap-3">
-          <a href="#" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
-            <Icon name="simple-icons:linkedin" size={20} />
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-muted-foreground/50 hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+            <Icon name="simple-icons:linkedin" size={18} />
           </a>
-          <a href="mailto:business@arova-ai.com" class="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
-            <Icon name="lucide:mail" size={20} />
+          <a href="mailto:business@arova-ai.com" class="text-muted-foreground/50 hover:text-primary transition-colors duration-300" aria-label="Email">
+            <Icon name="lucide:mail" size={18} />
           </a>
         </div>
       </div>
