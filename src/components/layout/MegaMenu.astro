@@ -88,4 +88,19 @@ const t = getTranslation(locale);
       </div>
     </div>
   </div>
+
+  <!-- Partner App Showcase -->
+  <div class="relative group">
+    <button class="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5">
+      {t.nav.partnerShowcase ?? '合作應用展示'}
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+      <div class="bg-[#131C2E] border border-white/10 rounded-xl shadow-2xl p-5 min-w-[240px] space-y-1">
+        <a href={getLocalePath(locale, '/partner-showcase/app-solutions')} class="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg transition-colors">{t.nav.appSolutions ?? '應用方案'}</a>
+        <a href={getLocalePath(locale, '/partner-showcase/activation-zone')} class="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg transition-colors">{t.nav.activationZone ?? '啟用專區'}</a>
+        <a href={getLocalePath(locale, '/partner-showcase/service-support')} class="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg transition-colors">{t.nav.serviceSupport ?? '服務支援'}</a>
+      </div>
+    </div>
+  </div>
 </div>

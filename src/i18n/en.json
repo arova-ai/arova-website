@@ -161,7 +161,11 @@
     "glossary": "Glossary",
     "assessment": "Free Assessment",
     "docs": "Documentation",
-    "industries": "Industries"
+    "industries": "Industries",
+    "partnerShowcase": "Partner App Showcase",
+    "appSolutions": "App Solutions",
+    "activationZone": "Activation Zone",
+    "serviceSupport": "Service Support"
   },
   "home": {
     "hero": {
