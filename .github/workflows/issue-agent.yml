@@ -12,8 +12,6 @@ permissions:
 jobs:
   handle-issue:
     runs-on: ubuntu-latest
-    # Only run on issues with specific labels or all issues
-    # Remove the if condition to run on ALL new issues
     if: contains(github.event.issue.labels.*.name, 'ai-agent') || contains(github.event.issue.labels.*.name, 'content-update')
 
     steps:
@@ -24,6 +22,7 @@ jobs:
         uses: anthropics/claude-code-action@beta
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           direct_prompt: |
             You are an AI agent for the Arova website (arova-ai.com).
 
