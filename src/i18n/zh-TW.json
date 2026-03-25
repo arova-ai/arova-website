@@ -991,6 +991,7 @@
     "hero": { "headline": "Arova Blog", "subtitle": "AI 驅動 IT 維運的最新觀點、技術深度與產業趨勢。" },
     "filters": ["全部", "觀點", "技術深度", "產業趨勢", "使用案例", "產品更新"],
     "articles": [
+      { "title": "企業導入 AI 維運的 5 個關鍵步驟", "category": "使用案例", "date": "2026-03-25", "readTime": "10 分鐘", "description": "從評估現有流程到全面部署，分享企業成功導入 AI-First IT 維運平台的實戰路線圖與常見陷阱。" },
       { "title": "什麼是 AI-First IT Operations？完整指南", "category": "觀點", "date": "2026-03-20", "readTime": "8 分鐘", "description": "從概念到實踐，了解 AI 如何從根本改變企業 IT 維運的方式。" },
       { "title": "Nexus Intelligence 架構解析：5 步驟 AI 推理引擎", "category": "技術深度", "date": "2026-03-18", "readTime": "12 分鐘", "description": "深入了解 Nexus Intelligence 如何感知、理解、規劃、執行和學習。" },
       { "title": "為什麼傳統 ITSM 不夠用了", "category": "產業趨勢", "date": "2026-03-15", "readTime": "6 分鐘", "description": "規則驅動的 ITSM 工具為什麼跟不上現代企業 IT 的需求。" },
