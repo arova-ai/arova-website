@@ -2,7 +2,11 @@ name: Issue Agent — AI-powered issue handler
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [labeled]
+
+concurrency:
+  group: issue-agent-${{ github.event.issue.number }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -12,7 +16,8 @@ permissions:
 jobs:
   handle-issue:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, 'ai-agent') || contains(github.event.issue.labels.*.name, 'content-update')
+    # Only trigger when the 'ai-agent' label is added (single trigger point)
+    if: github.event.label.name == 'ai-agent'
 
     steps:
       - name: Checkout
