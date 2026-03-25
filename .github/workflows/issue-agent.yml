@@ -1,0 +1,67 @@
+name: Issue Agent — AI-powered issue handler
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  handle-issue:
+    runs-on: ubuntu-latest
+    # Only run on issues with specific labels or all issues
+    # Remove the if condition to run on ALL new issues
+    if: contains(github.event.issue.labels.*.name, 'ai-agent') || contains(github.event.issue.labels.*.name, 'content-update')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Claude Code Agent
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_prompt: |
+            You are an AI agent for the Arova website (arova-ai.com).
+
+            A new GitHub issue has been created:
+
+            **Title:** ${{ github.event.issue.title }}
+            **Body:** ${{ github.event.issue.body }}
+            **Labels:** ${{ join(github.event.issue.labels.*.name, ', ') }}
+            **Author:** ${{ github.event.issue.user.login }}
+
+            ## Your Task
+
+            Analyze this issue and take appropriate action:
+
+            ### If it's a content update request:
+            1. Read the brand-website skill at `.claude/skills/brand-website/SKILL.md` to understand the project structure
+            2. Modify the appropriate locale files (`src/i18n/zh-TW.json` and/or `src/i18n/en.json`)
+            3. If a new page is needed, create it following the patterns in existing pages
+            4. Run `npm run build` to verify the changes compile
+            5. Commit the changes with a descriptive message
+
+            ### If it's a bug report:
+            1. Investigate the issue by reading the relevant source files
+            2. Fix the bug if possible
+            3. Run `npm run build` to verify
+            4. Commit the fix
+
+            ### If it's a question or discussion:
+            1. Analyze the codebase to find the answer
+            2. Do NOT make any code changes
+
+            ## Important Rules
+            - The site uses Astro 5.x + Tailwind CSS v4 + React islands
+            - Content is in `src/i18n/zh-TW.json` (Traditional Chinese, default) and `src/i18n/en.json`
+            - Both locale files must stay in sync (same key structure)
+            - zh-TW pages are at root URLs, en pages at /en/ prefix
+            - Always run `npm run build` before committing to verify changes
+            - Keep changes minimal and focused on the issue
+
+          allowed_tools: "Bash,Read,Write,Edit,Glob,Grep"
+          model: claude-sonnet-4-6

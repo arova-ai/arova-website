@@ -1,0 +1,32 @@
+name: Bug 回報 / Bug Report
+description: 回報網站問題，AI Agent 會自動調查並嘗試修復
+labels: ["ai-agent", "bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 問題描述
+      description: 發生了什麼問題？
+      placeholder: "例如：首頁的 FAQ 手風琴無法展開"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: 問題頁面 URL
+      placeholder: "https://arova-ai.com/platform"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 預期行為
+      description: 你預期應該怎樣？
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截圖
+      description: 如有截圖請貼上

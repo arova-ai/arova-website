@@ -1,0 +1,61 @@
+name: 內容更新 / Content Update
+description: 請求 AI Agent 自動更新網站內容
+labels: ["ai-agent", "content-update"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: 更新類型
+      options:
+        - 修改現有內容
+        - 新增頁面
+        - 修改導航或連結
+        - 翻譯修正
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: 影響語言
+      options:
+        - 繁體中文 + English (兩者)
+        - 僅繁體中文
+        - 僅 English
+    validations:
+      required: true
+
+  - type: textarea
+    id: page
+    attributes:
+      label: 目標頁面
+      description: 哪個頁面需要更新？
+      placeholder: "例如：首頁 hero 區段、/platform 頁面、/solutions/ai-driven-ops"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 詳細描述
+      description: 請描述需要的變更內容
+      placeholder: |
+        請盡可能具體描述：
+        - 哪段文字需要修改？
+        - 新的內容是什麼？
+        - 需要新增什麼區段？
+    validations:
+      required: true
+
+  - type: textarea
+    id: content-zh
+    attributes:
+      label: 中文內容（如適用）
+      description: 提供需要的繁體中文內容
+
+  - type: textarea
+    id: content-en
+    attributes:
+      label: English Content (if applicable)
+      description: Provide the English content needed
