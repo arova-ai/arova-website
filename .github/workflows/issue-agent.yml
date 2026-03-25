@@ -2,7 +2,7 @@ name: Issue Agent — AI-powered issue handler
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
 
 permissions:
   contents: write
