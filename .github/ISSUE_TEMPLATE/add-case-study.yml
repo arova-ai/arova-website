@@ -1,0 +1,56 @@
+name: 新增案例 / Add Case Study
+description: 新增一則客戶成功案例
+labels: ["ai-agent", "content-update"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 案例標題
+      placeholder: "例如：某科技公司導入 AI 維運自動化"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: industry
+    attributes:
+      label: 產業
+      options:
+        - 金融業
+        - 製造業
+        - 科技業
+        - 電子商務
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 客戶背景
+      placeholder: "公司規模、IT 團隊大小、使用的工具等"
+    validations:
+      required: true
+
+  - type: textarea
+    id: challenge
+    attributes:
+      label: 面臨的挑戰
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: 導入方式
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: 成果（請列點）
+      placeholder: |
+        - MTTR 縮短 50%
+        - L1 工單自動化率 40%
+    validations:
+      required: true

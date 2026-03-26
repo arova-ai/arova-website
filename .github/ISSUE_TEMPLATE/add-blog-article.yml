@@ -1,0 +1,47 @@
+name: 新增 Blog 文章 / Add Blog Article
+description: 在 Blog 頁面新增一篇文章卡片
+labels: ["ai-agent", "content-update"]
+body:
+  - type: input
+    id: title-zh
+    attributes:
+      label: 標題（中文）
+    validations:
+      required: true
+
+  - type: input
+    id: title-en
+    attributes:
+      label: Title (English)
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分類
+      options:
+        - 觀點 / Insights
+        - 技術深度 / Technical
+        - 產業趨勢 / Industry Trends
+        - 使用案例 / Use Cases
+        - 產品更新 / Product Updates
+    validations:
+      required: true
+
+  - type: textarea
+    id: description-zh
+    attributes:
+      label: 文章摘要（中文）
+      placeholder: "1-2 句話描述文章內容"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description-en
+    attributes:
+      label: Article Description (English)
+
+  - type: input
+    id: read-time
+    attributes:
+      label: 閱讀時間
+      placeholder: "例如：8 分鐘"

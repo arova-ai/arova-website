@@ -1,0 +1,9 @@
+# Default — all changes need review from core team
+* @spacecadet0418 @lyhcode
+
+# Locale content — PM/marketing can also review
+src/i18n/ @spacecadet0418 @lyhcode
+
+# Infrastructure — only core maintainers
+.github/ @lyhcode
+astro.config.mjs @lyhcode

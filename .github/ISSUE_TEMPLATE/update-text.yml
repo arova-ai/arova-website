@@ -1,0 +1,38 @@
+name: 修改文案 / Update Text
+description: 修改網站上的文字內容（最簡單的方式）
+labels: ["ai-agent", "content-update"]
+body:
+  - type: textarea
+    id: current
+    attributes:
+      label: 目前的文字
+      description: 複製貼上目前網站上顯示的文字
+      placeholder: "例如：協助企業打造更快、更穩、更可控的 IT 維運模式。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: new
+    attributes:
+      label: 要改成什麼
+      description: 新的文字內容
+      placeholder: "例如：幫助企業建立智慧化的 IT 維運體系。"
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: 在哪個頁面
+      placeholder: "例如：首頁、關於我們、/platform"
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: 影響語言
+      options:
+        - 繁體中文 + English
+        - 僅繁體中文
+        - 僅 English
+    validations:
+      required: true

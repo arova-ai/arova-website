@@ -1,0 +1,29 @@
+name: 新增 FAQ / Add FAQ
+description: 新增一則常見問題
+labels: ["ai-agent", "content-update"]
+body:
+  - type: textarea
+    id: question-zh
+    attributes:
+      label: 問題（中文）
+      placeholder: "例如：Arova Nexus 的定價方式是什麼？"
+    validations:
+      required: true
+
+  - type: textarea
+    id: answer-zh
+    attributes:
+      label: 回答（中文）
+      placeholder: "例如：我們提供彈性的訂閱方案，依據企業規模和需求客製報價。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question-en
+    attributes:
+      label: Question (English)
+
+  - type: textarea
+    id: answer-en
+    attributes:
+      label: Answer (English)
