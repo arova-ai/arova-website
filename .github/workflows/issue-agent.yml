@@ -16,7 +16,6 @@ permissions:
 jobs:
   handle-issue:
     runs-on: ubuntu-latest
-    # Only trigger when the 'ai-agent' label is added (single trigger point)
     if: github.event.label.name == 'ai-agent'
 
     steps:
@@ -26,6 +25,8 @@ jobs:
       - name: Run Claude Code Agent
         id: claude
         uses: anthropics/claude-code-action@beta
+        env:
+          GANDI_PAT: ${{ secrets.GANDI_PAT }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,34 +40,39 @@ jobs:
             **Labels:** ${{ join(github.event.issue.labels.*.name, ', ') }}
             **Author:** ${{ github.event.issue.user.login }}
 
-            ## Your Task
+            ## Your Capabilities
 
-            Analyze this issue and take appropriate action:
+            You can handle THREE types of tasks:
 
-            ### If it's a content update request:
-            1. Read the brand-website skill at `.claude/skills/brand-website/SKILL.md` to understand the project structure
-            2. Modify the appropriate locale files (`src/i18n/zh-TW.json` and/or `src/i18n/en.json`)
-            3. If a new page is needed, create it following the patterns in existing pages
-            4. Run `npm run build` to verify the changes compile
-            5. Commit the changes with a descriptive message
+            ### 1. Website Content (code changes)
+            Content updates, bug fixes, new pages, text changes.
+            - Read `.claude/skills/brand-website/SKILL.md` for project structure
+            - Modify locale files (`src/i18n/zh-TW.json` and `src/i18n/en.json`)
+            - Create/edit Astro pages if needed
+            - Run `npm run build` to verify (requires Node.js >= 22)
+            - Commit changes
 
-            ### If it's a bug report:
-            1. Investigate the issue by reading the relevant source files
-            2. Fix the bug if possible
-            3. Run `npm run build` to verify
-            4. Commit the fix
+            ### 2. DNS & Email Management (API calls)
+            DNS records, email forwarding, domain configuration for arova-ai.com.
+            - Read `.claude/skills/gandi-arova/SKILL.md` for Gandi API reference
+            - Use the GANDI_PAT environment variable for authentication: `curl -H "Authorization: Bearer $GANDI_PAT" ...`
+            - API base: `https://api.gandi.net/v5`
+            - DNS records: `GET/PUT/POST/DELETE /livedns/domains/arova-ai.com/records/...`
+            - Email forwards: `GET/POST/PUT/DELETE /email/forwards/arova-ai.com/...`
+            - Always list current records BEFORE making changes
+            - Do NOT modify MX, SPF, or DKIM records unless explicitly asked
 
-            ### If it's a question or discussion:
-            1. Analyze the codebase to find the answer
-            2. Do NOT make any code changes
+            ### 3. Questions & Analysis
+            If the issue is a question, analyze the codebase or DNS to answer it. No changes needed.
 
             ## Important Rules
             - The site uses Astro 5.x + Tailwind CSS v4 + React islands
-            - Content is in `src/i18n/zh-TW.json` (Traditional Chinese, default) and `src/i18n/en.json`
+            - Content is in `src/i18n/zh-TW.json` (Traditional Chinese) and `src/i18n/en.json`
             - Both locale files must stay in sync (same key structure)
             - zh-TW pages are at root URLs, en pages at /en/ prefix
-            - Always run `npm run build` before committing to verify changes
+            - Always verify before committing (build for code, GET for DNS)
             - Keep changes minimal and focused on the issue
+            - For DNS changes, create a snapshot first: `POST /livedns/domains/arova-ai.com/snapshots`
 
           allowed_tools: "Bash,Read,Write,Edit,Glob,Grep"
           model: claude-sonnet-4-6
@@ -79,7 +85,6 @@ jobs:
           ISSUE_NUMBER=${{ github.event.issue.number }}
           BRANCH=$(git branch -r --contains HEAD 2>/dev/null | grep -v 'origin/main' | head -1 | sed 's|origin/||;s|^ *||')
 
-          # If no branch found, check for claude branches
           if [ -z "$BRANCH" ]; then
             BRANCH=$(git branch -r | grep "claude/issue-${ISSUE_NUMBER}" | tail -1 | sed 's|origin/||;s|^ *||')
           fi
@@ -91,14 +96,12 @@ jobs:
 
           echo "Found branch: $BRANCH"
 
-          # Check if there are actual changes vs main
           DIFF=$(git diff origin/main...origin/$BRANCH --stat 2>/dev/null)
           if [ -z "$DIFF" ]; then
             echo "No changes to merge"
             exit 0
           fi
 
-          # Create PR
           PR_URL=$(gh pr create \
             --head "$BRANCH" \
             --base main \
@@ -111,11 +114,9 @@ jobs:
 
           echo "PR created: $PR_URL"
 
-          # Extract PR number
           PR_NUMBER=$(echo "$PR_URL" | grep -oE '[0-9]+$')
 
           if [ -n "$PR_NUMBER" ]; then
-            # Auto-merge
             sleep 5
             gh pr merge "$PR_NUMBER" --merge --delete-branch
             echo "PR #${PR_NUMBER} merged and branch deleted"

@@ -1,0 +1,32 @@
+name: DNS / Email 設定 / DNS & Email Config
+description: 修改 arova-ai.com 的 DNS 記錄或 Email 轉寄設定
+labels: ["ai-agent", "infrastructure"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: 操作類型
+      options:
+        - 新增 DNS 記錄
+        - 修改 DNS 記錄
+        - 刪除 DNS 記錄
+        - 新增 Email 轉寄
+        - 修改 Email 轉寄
+        - 刪除 Email 轉寄
+        - 查詢目前設定
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 詳細描述
+      description: 請描述需要的變更
+      placeholder: |
+        例如：
+        - 新增 A 記錄：blog.arova-ai.com → 1.2.3.4
+        - 新增 email 轉寄：info@arova-ai.com → someone@example.com
+        - 查詢目前所有 DNS 記錄
+    validations:
+      required: true
